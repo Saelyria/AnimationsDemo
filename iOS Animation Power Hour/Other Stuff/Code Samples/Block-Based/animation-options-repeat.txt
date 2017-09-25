@@ -1,6 +1,7 @@
 let square = UIView()
+let options = [.curveEaseInOut, .repeat, .autoreverse]
 
-UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseInOut, .repeat, .autoreverse], animations: {
+UIView.animate(withDuration: 1.0, delay: 0.0, options: options, animations: {
     square.alpha = 0
     square.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
 }, completion: nil)

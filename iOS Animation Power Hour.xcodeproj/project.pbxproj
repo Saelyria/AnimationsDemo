@@ -869,6 +869,15 @@
 		AB0CC7261F75B1700050E486 /* Code Samples */ = {
 			isa = PBXGroup;
 			children = (
+				AB8D55B71F79B39700C983B4 /* Block-Based */,
+				AB8D55B81F79B3B300C983B4 /* Property Animator */,
+			);
+			path = "Code Samples";
+			sourceTree = "<group>";
+		};
+		AB8D55B71F79B39700C983B4 /* Block-Based */ = {
+			isa = PBXGroup;
+			children = (
 				AB0CC7271F75B1A20050E486 /* animate-alpha.txt */,
 				AB8D55AB1F79800000C983B4 /* animate-color.txt */,
 				AB8D55AD1F798E9900C983B4 /* animate-transform.txt */,
@@ -877,7 +886,14 @@
 				AB8D55B31F79ABD600C983B4 /* animation-options-current-state.txt */,
 				AB8D55B51F79AC2900C983B4 /* animation-options-curves.txt */,
 			);
-			path = "Code Samples";
+			path = "Block-Based";
+			sourceTree = "<group>";
+		};
+		AB8D55B81F79B3B300C983B4 /* Property Animator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Property Animator";
 			sourceTree = "<group>";
 		};
 		ABE525351F744B640087D70F = {
