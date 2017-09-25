@@ -24,7 +24,8 @@ class DemoSectionView: CollapsableView {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.numberOfLines = 0
         descriptionLabel.text = description
-        descriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        descriptionLabel.textColor = UIColor.darkGray
         contentView.addSubview(descriptionLabel)
         
         let animatingViewSectionTitle = UILabel()
@@ -66,7 +67,7 @@ class DemoSectionView: CollapsableView {
         contentView.addSubview(sampleCodeView)
         
         let views = ["desc":descriptionLabel, "animTitle":animatingViewSectionTitle, "animView":animatingViewSection, "buttons":buttonsStackView, "codeTitle":codeSectionTitle, "code":sampleCodeView]
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0@999-[desc]-35-[animTitle]-10-[animView(200)]-15-[buttons]-35-[codeTitle]-10-[code]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10@999-[desc]-35-[animTitle]-10-[animView(200)]-15-[buttons]-35-[codeTitle]-10-[code]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[desc]-25-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[animTitle]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[animView]-25-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))

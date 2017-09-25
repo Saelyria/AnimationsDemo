@@ -268,6 +268,9 @@
 		AB8D55AC1F79800000C983B4 /* animate-color.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AB1F79800000C983B4 /* animate-color.txt */; };
 		AB8D55AE1F798E9900C983B4 /* animate-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AD1F798E9900C983B4 /* animate-transform.txt */; };
 		AB8D55B01F799FA200C983B4 /* animate-multi-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */; };
+		AB8D55B21F79A3E300C983B4 /* animation-options-repeat.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55B11F79A3E300C983B4 /* animation-options-repeat.txt */; };
+		AB8D55B41F79ABD600C983B4 /* animation-options-current-state.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55B31F79ABD600C983B4 /* animation-options-current-state.txt */; };
+		AB8D55B61F79AC2900C983B4 /* animation-options-curves.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55B51F79AC2900C983B4 /* animation-options-curves.txt */; };
 		ABE525421F744B640087D70F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE525411F744B640087D70F /* AppDelegate.swift */; };
 		ABE525441F744B640087D70F /* BasicAnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE525431F744B640087D70F /* BasicAnimationsViewController.swift */; };
 		ABE525491F744B640087D70F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE525481F744B640087D70F /* Assets.xcassets */; };
@@ -538,6 +541,9 @@
 		AB8D55AB1F79800000C983B4 /* animate-color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-color.txt"; sourceTree = "<group>"; };
 		AB8D55AD1F798E9900C983B4 /* animate-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-transform.txt"; sourceTree = "<group>"; };
 		AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-multi-transform.txt"; sourceTree = "<group>"; };
+		AB8D55B11F79A3E300C983B4 /* animation-options-repeat.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animation-options-repeat.txt"; sourceTree = "<group>"; };
+		AB8D55B31F79ABD600C983B4 /* animation-options-current-state.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animation-options-current-state.txt"; sourceTree = "<group>"; };
+		AB8D55B51F79AC2900C983B4 /* animation-options-curves.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animation-options-curves.txt"; sourceTree = "<group>"; };
 		ABE5253E1F744B640087D70F /* iOS Animation Power Hour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Animation Power Hour.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE525411F744B640087D70F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE525431F744B640087D70F /* BasicAnimationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAnimationsViewController.swift; sourceTree = "<group>"; };
@@ -867,6 +873,9 @@
 				AB8D55AB1F79800000C983B4 /* animate-color.txt */,
 				AB8D55AD1F798E9900C983B4 /* animate-transform.txt */,
 				AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */,
+				AB8D55B11F79A3E300C983B4 /* animation-options-repeat.txt */,
+				AB8D55B31F79ABD600C983B4 /* animation-options-current-state.txt */,
+				AB8D55B51F79AC2900C983B4 /* animation-options-curves.txt */,
 			);
 			path = "Code Samples";
 			sourceTree = "<group>";
@@ -1104,9 +1113,11 @@
 				AB0CC6B81F75ABB30050E486 /* gauss.min.js in Resources */,
 				AB0CC6D21F75ABB30050E486 /* lisp.min.js in Resources */,
 				AB0CC6571F75ABA80050E486 /* grayscale.min.css in Resources */,
+				AB8D55B61F79AC2900C983B4 /* animation-options-curves.txt in Resources */,
 				AB0CC6BF1F75ABB30050E486 /* groovy.min.js in Resources */,
 				AB0CC7221F75ABB30050E486 /* xml.min.js in Resources */,
 				AB0CC62D1F75ABA80050E486 /* agate.min.css in Resources */,
+				AB8D55B41F79ABD600C983B4 /* animation-options-current-state.txt in Resources */,
 				AB0CC6781F75ABA80050E486 /* tomorrow.min.css in Resources */,
 				AB0CC6BD1F75ABB30050E486 /* golo.min.js in Resources */,
 				AB0CC6481F75ABA80050E486 /* brown-paper.min.css in Resources */,
@@ -1180,6 +1191,7 @@
 				AB0CC7101F75ABB30050E486 /* swift.min.js in Resources */,
 				AB0CC6A91F75ABB30050E486 /* dsconfig.min.js in Resources */,
 				AB0CC66A1F75ABA80050E486 /* purebasic.min.css in Resources */,
+				AB8D55B21F79A3E300C983B4 /* animation-options-repeat.txt in Resources */,
 				AB0CC6631F75ABA80050E486 /* monokai.min.css in Resources */,
 				AB0CC66F1F75ABA80050E486 /* school-book.min.css in Resources */,
 				AB0CC6C11F75ABB30050E486 /* handlebars.min.js in Resources */,

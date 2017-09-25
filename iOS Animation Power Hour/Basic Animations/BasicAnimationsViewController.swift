@@ -47,6 +47,18 @@ class BasicAnimationsViewController: UIViewController {
         let multiTransformAnimationSection = self.createMultiTransformSection()
         self.sections.append(multiTransformAnimationSection)
         stackView.addArrangedSubview(multiTransformAnimationSection)
+        
+        let optionsRepeatAnimationSection = self.createOptionsRepeatingSection()
+        self.sections.append(optionsRepeatAnimationSection)
+        stackView.addArrangedSubview(optionsRepeatAnimationSection)
+        
+        let optionsCurrentStateAnimationSection = self.createOptionsCurrentStateSection()
+        self.sections.append(optionsCurrentStateAnimationSection)
+        stackView.addArrangedSubview(optionsCurrentStateAnimationSection)
+        
+        let optionsCurvesAnimationSection = self.createOptionsCurvesSection()
+        self.sections.append(optionsCurvesAnimationSection)
+        stackView.addArrangedSubview(optionsCurvesAnimationSection)
     }
     
     func stringFromCodeSampleFile(named fileName: String) -> String {
@@ -163,7 +175,7 @@ fileprivate extension BasicAnimationsViewController {
         
         let actionTitle = "Animate"
         let animationBlock = {
-            UIView.animate(withDuration: 2.0, animations: {
+            UIView.animate(withDuration: 1.0, animations: {
                 if (animatingView.transform == CGAffineTransform.identity) {
                     let translateTransform = CGAffineTransform(translationX: 100, y: 0)
                     let scaleTransform = CGAffineTransform(scaleX: 1.6, y: 1.6)
@@ -179,10 +191,100 @@ fileprivate extension BasicAnimationsViewController {
         return animationSection
     }
     
-    func createRedSquare() -> UIView {
+    func createOptionsRepeatingSection() -> DemoSectionView {
+        let sectionTitle = "Repeating"
+        let description = "There are a bunch of other options you can give the animation method, including a delay, a completion block, and an array of options. One of these options is the ability to set an animation to repeat (UIViewAnimationOptions.repeat) and, when repeating, automatically reverse each time (UIViewAnimationOptions.autoreverse).\n\nStopping repeating block-based animations is one of the caveats of them; to stop them, you have to remove all animations from the view's layer and reset the view to its defaults manually, and it looks pretty janky."
+        let sampleCode = self.stringFromCodeSampleFile(named: "animation-options-repeat")
+        let animatingView = self.createRedSquare()
+        
+        let animateActionTitle = "Animate"
+        let animationBlock = {
+            UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+                animatingView.alpha = 0
+                animatingView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            }, completion: nil)
+        }
+        let animateAction = DemoSectionViewAction(buttonTitle: animateActionTitle, actionBlock: animationBlock)
+        
+        let stopActionTitle = "Stop"
+        let stopAnimationBlock = {
+            animatingView.layer.removeAllAnimations()
+            animatingView.alpha = 1
+            animatingView.transform = CGAffineTransform.identity
+        }
+        let stopAnimateAction = DemoSectionViewAction(buttonTitle: stopActionTitle, actionBlock: stopAnimationBlock)
+        
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: [animateAction, stopAnimateAction])
+        return animationSection
+    }
+    
+    func createOptionsCurrentStateSection() -> DemoSectionView {
+        let sectionTitle = "Competing Animations"
+        let description = "When an animation block is started that animates properties already being animated from another block, UIKit will complete the previous animation and start the new animation. This behaviour can be seen with the previous animations by quickly tapping 'Animate' while an animation is underway. Luckily, there's an animation option (UIViewAnimationOptions.beginFromCurrentState) that tells UIKit to begin the animation of a newly-started competing block with the current values from an already-running block."
+        let sampleCode = self.stringFromCodeSampleFile(named: "animation-options-current-state")
+        let animatingView = self.createRedSquare()
+        
+        let actionTitle = "Animate"
+        let animationBlock = {
+            UIView.animate(withDuration: 1.0, delay: 0.0, options: .beginFromCurrentState, animations: {
+                if (animatingView.alpha > 0) {
+                    animatingView.alpha = 0
+                } else {
+                    animatingView.alpha = 1
+                }
+            }, completion: nil)
+        }
+        let action = DemoSectionViewAction(buttonTitle: actionTitle, actionBlock: animationBlock)
+        
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: [action])
+        return animationSection
+    }
+    
+    func createOptionsCurvesSection() -> DemoSectionView {
+        let sectionTitle = "Animation Curves"
+        let description = "Another set of animation options are built-in animation curves. When passed to the animate method, UIKit will calculate the animating properties according to the curve's underlying function. If a curve is not passed in, it defaults to UIViewAnimationOptions.curveLinear."
+        let sampleCode = self.stringFromCodeSampleFile(named: "animation-options-curves")
+        
+        let square1 = self.createRedSquare(width: 60)
+        let square2 = self.createRedSquare(width: 60)
+        let animatingView = UIView()
+        animatingView.addSubview(square1)
+        animatingView.addSubview(square2)
+        NSLayoutConstraint(item: animatingView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 200).isActive = true
+        NSLayoutConstraint(item: animatingView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 300).isActive = true
+        NSLayoutConstraint(item: square1, attribute: .centerX, relatedBy: .equal, toItem: animatingView, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: square2, attribute: .centerX, relatedBy: .equal, toItem: animatingView, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        let views = ["s1":square1, "s2":square2]
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(>=30)-[s1]-20-[s2]-(>=30)-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        
+        let actionTitle = "Animate"
+        let animationBlock = {
+            UIView.animate(withDuration: 1.0, animations: {
+                if (square1.transform == CGAffineTransform.identity) {
+                    square1.transform = CGAffineTransform(translationX: 100, y: 0)
+                } else {
+                    square1.transform = CGAffineTransform.identity
+                }
+            })
+            
+            UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
+                if (square2.transform == CGAffineTransform.identity) {
+                    square2.transform = CGAffineTransform(translationX: 100, y: 0)
+                } else {
+                    square2.transform = CGAffineTransform.identity
+                }
+            }, completion: nil)
+        }
+        let action = DemoSectionViewAction(buttonTitle: actionTitle, actionBlock: animationBlock)
+        
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: [action])
+        return animationSection
+    }
+    
+    func createRedSquare(width: CGFloat = 100) -> UIView {
         let redSquare = UIView()
         redSquare.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: redSquare, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 100).isActive = true
+        NSLayoutConstraint(item: redSquare, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: width).isActive = true
         NSLayoutConstraint(item: redSquare, attribute: .width, relatedBy: .equal, toItem: redSquare, attribute: .height, multiplier: 1, constant: 0).isActive = true
         redSquare.backgroundColor = UIColor.red
         return redSquare

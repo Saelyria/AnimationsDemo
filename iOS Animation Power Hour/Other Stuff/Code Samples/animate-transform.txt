@@ -1,8 +1,27 @@
 let square = UIView()
 
+// translation
 UIView.animate(withDuration: 1.0, animations: {
     if (animatingView.transform != CGAffineTransform.identity) {
         animatingView.transform = CGAffineTransform(translationX: 100, y: 0)
+    } else {
+        animatingView.transform = CGAffineTransform.identity
+    }
+})
+
+// rotation
+UIView.animate(withDuration: 1.0, animations: {
+    if (animatingView.transform != CGAffineTransform.identity) {
+        animatingView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+    } else {
+        animatingView.transform = CGAffineTransform.identity
+    }
+})
+
+// scale
+UIView.animate(withDuration: 1.0, animations: {
+    if (animatingView.transform != CGAffineTransform.identity) {
+        animatingView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
     } else {
         animatingView.transform = CGAffineTransform.identity
     }
