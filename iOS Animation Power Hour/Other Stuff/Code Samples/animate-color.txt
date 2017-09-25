@@ -1,0 +1,10 @@
+let square = UIView()
+square.backgroundColor = UIColor.red
+
+UIView.animate(withDuration: 1.0, animations: {
+    if (square.backgroundColor != UIColor.red) {
+        square.backgroundColor = UIColor.red
+    } else {
+        square.backgroundColor = UIColor.blue
+    }
+})

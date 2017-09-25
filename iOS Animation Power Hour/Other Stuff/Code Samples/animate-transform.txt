@@ -1,0 +1,9 @@
+let square = UIView()
+
+UIView.animate(withDuration: 1.0, animations: {
+    if (animatingView.transform != CGAffineTransform.identity) {
+        animatingView.transform = CGAffineTransform(translationX: 100, y: 0)
+    } else {
+        animatingView.transform = CGAffineTransform.identity
+    }
+})

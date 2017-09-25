@@ -1,0 +1,11 @@
+let square = UIView()
+
+UIView.animate(withDuration: 1.0, animations: {
+    if (square.transform == CGAffineTransform.identity) {
+        let translateTransform = CGAffineTransform(translationX: 100, y: 0)
+        let scaleTransform = CGAffineTransform(scaleX: 1.6, y: 1.6)
+        square.transform = translateTransform.concatenating(scaleTransform)
+    } else {
+        square.transform = CGAffineTransform.identity
+    }
+})

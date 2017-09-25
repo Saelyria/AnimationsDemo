@@ -1,7 +1,9 @@
-UIView.animate(withDuration: 0.5, animations: {
-    if (alphaLabel.alpha > 0) {
-        alphaLabel.alpha = 0
+let square = UIView()
+
+UIView.animate(withDuration: 1.0, animations: {
+    if (square.alpha > 0) {
+        square.alpha = 0
     } else {
-        alphaLabel.alpha = 1
+        square.alpha = 1
     }
 })

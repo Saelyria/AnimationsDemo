@@ -2,7 +2,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    let basicAnimationsButton = UIButton(type: .system)
+    let blockAnimationsButton = UIButton(type: .system)
     let propertyAnimatorButton = UIButton(type: .system)
     let pushAnimationButton = UIButton(type: .system)
     let modalAnimationsButton = UIButton(type: .system)
@@ -13,13 +13,13 @@ class MainViewController: UIViewController {
         self.title = "Samples"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        self.basicAnimationsButton.setTitle("Basic Animations", for: .normal)
-        self.basicAnimationsButton.addTarget(self, action: #selector(basicAnimationsPressed), for: .touchUpInside)
+        self.blockAnimationsButton.setTitle("Block-Based Animations", for: .normal)
+        self.blockAnimationsButton.addTarget(self, action: #selector(basicAnimationsPressed), for: .touchUpInside)
         self.propertyAnimatorButton.setTitle("Animations with a Property Animator", for: .normal)
         self.pushAnimationButton.setTitle("Push Animation", for: .normal)
         self.modalAnimationsButton.setTitle("Modal Animations", for: .normal)
         
-        let buttons = [ self.basicAnimationsButton, self.pushAnimationButton, self.modalAnimationsButton ]
+        let buttons = [ self.blockAnimationsButton, self.propertyAnimatorButton, self.pushAnimationButton, self.modalAnimationsButton ]
         buttons.forEach { button in self.setupStyleOnButton(button) }
 
         let stackView = UIStackView(arrangedSubviews: buttons)
@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         button.setupWithOutline()
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 50).isActive = true
-        NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 200).isActive = true
+        NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 300).isActive = true
     }
     
     @objc func basicAnimationsPressed() {

@@ -262,7 +262,12 @@
 		AB0CC7241F75ABB30050E486 /* yaml.min.js in Resources */ = {isa = PBXBuildFile; fileRef = AB0CC5D41F75AA140050E486 /* yaml.min.js */; };
 		AB0CC7251F75ABB30050E486 /* zephir.min.js in Resources */ = {isa = PBXBuildFile; fileRef = AB0CC5D51F75AA140050E486 /* zephir.min.js */; };
 		AB0CC7281F75B1A20050E486 /* animate-alpha.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB0CC7271F75B1A20050E486 /* animate-alpha.txt */; };
-		AB0CC72A1F75B44E0050E486 /* AnimationSectionDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CC7291F75B44E0050E486 /* AnimationSectionDemoView.swift */; };
+		AB0CC72A1F75B44E0050E486 /* DemoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */; };
+		AB0CC72C1F7949B10050E486 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CC72B1F7949B10050E486 /* CodeView.swift */; };
+		AB8D55AA1F79603100C983B4 /* CollapsableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8D55A91F79603100C983B4 /* CollapsableView.swift */; };
+		AB8D55AC1F79800000C983B4 /* animate-color.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AB1F79800000C983B4 /* animate-color.txt */; };
+		AB8D55AE1F798E9900C983B4 /* animate-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AD1F798E9900C983B4 /* animate-transform.txt */; };
+		AB8D55B01F799FA200C983B4 /* animate-multi-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */; };
 		ABE525421F744B640087D70F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE525411F744B640087D70F /* AppDelegate.swift */; };
 		ABE525441F744B640087D70F /* BasicAnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE525431F744B640087D70F /* BasicAnimationsViewController.swift */; };
 		ABE525491F744B640087D70F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE525481F744B640087D70F /* Assets.xcassets */; };
@@ -527,7 +532,12 @@
 		AB0CC6261F75AA140050E486 /* xt256.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = xt256.min.css; sourceTree = "<group>"; };
 		AB0CC6271F75AA140050E486 /* zenburn.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = zenburn.min.css; sourceTree = "<group>"; };
 		AB0CC7271F75B1A20050E486 /* animate-alpha.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-alpha.txt"; sourceTree = "<group>"; };
-		AB0CC7291F75B44E0050E486 /* AnimationSectionDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSectionDemoView.swift; sourceTree = "<group>"; };
+		AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSectionView.swift; sourceTree = "<group>"; };
+		AB0CC72B1F7949B10050E486 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		AB8D55A91F79603100C983B4 /* CollapsableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableView.swift; sourceTree = "<group>"; };
+		AB8D55AB1F79800000C983B4 /* animate-color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-color.txt"; sourceTree = "<group>"; };
+		AB8D55AD1F798E9900C983B4 /* animate-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-transform.txt"; sourceTree = "<group>"; };
+		AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-multi-transform.txt"; sourceTree = "<group>"; };
 		ABE5253E1F744B640087D70F /* iOS Animation Power Hour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Animation Power Hour.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE525411F744B640087D70F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE525431F744B640087D70F /* BasicAnimationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAnimationsViewController.swift; sourceTree = "<group>"; };
@@ -854,6 +864,9 @@
 			isa = PBXGroup;
 			children = (
 				AB0CC7271F75B1A20050E486 /* animate-alpha.txt */,
+				AB8D55AB1F79800000C983B4 /* animate-color.txt */,
+				AB8D55AD1F798E9900C983B4 /* animate-transform.txt */,
+				AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */,
 			);
 			path = "Code Samples";
 			sourceTree = "<group>";
@@ -904,7 +917,9 @@
 			isa = PBXGroup;
 			children = (
 				ABE525571F759A610087D70F /* UIButton+Utilities.swift */,
-				AB0CC7291F75B44E0050E486 /* AnimationSectionDemoView.swift */,
+				AB8D55A91F79603100C983B4 /* CollapsableView.swift */,
+				AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */,
+				AB0CC72B1F7949B10050E486 /* CodeView.swift */,
 				AB0CC7261F75B1700050E486 /* Code Samples */,
 			);
 			path = "Other Stuff";
@@ -1062,6 +1077,7 @@
 				AB0CC6301F75ABA80050E486 /* arta.min.css in Resources */,
 				AB0CC6C31F75ABB30050E486 /* haxe.min.js in Resources */,
 				AB0CC6EB1F75ABB30050E486 /* oxygene.min.js in Resources */,
+				AB8D55AE1F798E9900C983B4 /* animate-transform.txt in Resources */,
 				AB0CC6AF1F75ABB30050E486 /* erb.min.js in Resources */,
 				AB0CC6551F75ABA80050E486 /* github.min.css in Resources */,
 				AB0CC6911F75ABB30050E486 /* cal.min.js in Resources */,
@@ -1102,6 +1118,7 @@
 				AB0CC6691F75ABA80050E486 /* pojoaque.min.css in Resources */,
 				AB0CC62C1F75AB950050E486 /* highlight.min.js in Resources */,
 				AB0CC6701F75ABA80050E486 /* school-book.png in Resources */,
+				AB8D55AC1F79800000C983B4 /* animate-color.txt in Resources */,
 				AB0CC6E31F75ABB30050E486 /* moonscript.min.js in Resources */,
 				AB0CC6371F75ABA80050E486 /* atelier-estuary-light.min.css in Resources */,
 				AB0CC6821F75ABB30050E486 /* apache.min.js in Resources */,
@@ -1221,6 +1238,7 @@
 				AB0CC6F11F75ABB30050E486 /* powershell.min.js in Resources */,
 				AB0CC6661F75ABA80050E486 /* paraiso-dark.min.css in Resources */,
 				AB0CC70A1F75ABB30050E486 /* sql.min.js in Resources */,
+				AB8D55B01F799FA200C983B4 /* animate-multi-transform.txt in Resources */,
 				AB0CC6C51F75ABB30050E486 /* htmlbars.min.js in Resources */,
 				AB0CC68F1F75ABB30050E486 /* bnf.min.js in Resources */,
 				AB0CC6C41F75ABB30050E486 /* hsp.min.js in Resources */,
@@ -1256,11 +1274,13 @@
 				AB0CC62B1F75AB810050E486 /* Theme.swift in Sources */,
 				AB0CC62A1F75AB7F0050E486 /* HTMLUtils.swift in Sources */,
 				AB0CC6291F75AB7E0050E486 /* Highlightr.swift in Sources */,
+				AB0CC72C1F7949B10050E486 /* CodeView.swift in Sources */,
+				AB8D55AA1F79603100C983B4 /* CollapsableView.swift in Sources */,
 				AB0CC6281F75AB7C0050E486 /* CodeAttributedString.swift in Sources */,
 				ABE525541F744CF30087D70F /* MainViewController.swift in Sources */,
 				ABE525441F744B640087D70F /* BasicAnimationsViewController.swift in Sources */,
 				ABE525581F759A610087D70F /* UIButton+Utilities.swift in Sources */,
-				AB0CC72A1F75B44E0050E486 /* AnimationSectionDemoView.swift in Sources */,
+				AB0CC72A1F75B44E0050E486 /* DemoSectionView.swift in Sources */,
 				ABE525421F744B640087D70F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
