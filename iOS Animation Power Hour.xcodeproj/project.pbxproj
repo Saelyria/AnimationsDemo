@@ -271,8 +271,8 @@
 		AB6150341F7AD89B00948360 /* property-animator-reverse.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150331F7AD89B00948360 /* property-animator-reverse.txt */; };
 		AB6150361F7AF40E00948360 /* property-animator-basics.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150351F7AF40E00948360 /* property-animator-basics.txt */; };
 		AB6150381F7AF63700948360 /* property-animator-states.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150371F7AF63700948360 /* property-animator-states.txt */; };
+		AB61503A1F7C3BC300948360 /* animate-frame.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150391F7C3BC300948360 /* animate-frame.txt */; };
 		AB8D55AA1F79603100C983B4 /* CollapsableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8D55A91F79603100C983B4 /* CollapsableView.swift */; };
-		AB8D55AC1F79800000C983B4 /* animate-color.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AB1F79800000C983B4 /* animate-color.txt */; };
 		AB8D55AE1F798E9900C983B4 /* animate-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AD1F798E9900C983B4 /* animate-transform.txt */; };
 		AB8D55B01F799FA200C983B4 /* animate-multi-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */; };
 		AB8D55B21F79A3E300C983B4 /* animation-options-repeat.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55B11F79A3E300C983B4 /* animation-options-repeat.txt */; };
@@ -551,8 +551,8 @@
 		AB6150331F7AD89B00948360 /* property-animator-reverse.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-reverse.txt"; sourceTree = "<group>"; };
 		AB6150351F7AF40E00948360 /* property-animator-basics.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-basics.txt"; sourceTree = "<group>"; };
 		AB6150371F7AF63700948360 /* property-animator-states.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-states.txt"; sourceTree = "<group>"; };
+		AB6150391F7C3BC300948360 /* animate-frame.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-frame.txt"; sourceTree = "<group>"; };
 		AB8D55A91F79603100C983B4 /* CollapsableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableView.swift; sourceTree = "<group>"; };
-		AB8D55AB1F79800000C983B4 /* animate-color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-color.txt"; sourceTree = "<group>"; };
 		AB8D55AD1F798E9900C983B4 /* animate-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-transform.txt"; sourceTree = "<group>"; };
 		AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-multi-transform.txt"; sourceTree = "<group>"; };
 		AB8D55B11F79A3E300C983B4 /* animation-options-repeat.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animation-options-repeat.txt"; sourceTree = "<group>"; };
@@ -893,7 +893,7 @@
 			isa = PBXGroup;
 			children = (
 				AB0CC7271F75B1A20050E486 /* animate-alpha.txt */,
-				AB8D55AB1F79800000C983B4 /* animate-color.txt */,
+				AB6150391F7C3BC300948360 /* animate-frame.txt */,
 				AB8D55AD1F798E9900C983B4 /* animate-transform.txt */,
 				AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */,
 				AB8D55B11F79A3E300C983B4 /* animation-options-repeat.txt */,
@@ -1167,7 +1167,6 @@
 				AB0CC6691F75ABA80050E486 /* pojoaque.min.css in Resources */,
 				AB0CC62C1F75AB950050E486 /* highlight.min.js in Resources */,
 				AB0CC6701F75ABA80050E486 /* school-book.png in Resources */,
-				AB8D55AC1F79800000C983B4 /* animate-color.txt in Resources */,
 				AB0CC6E31F75ABB30050E486 /* moonscript.min.js in Resources */,
 				AB0CC6371F75ABA80050E486 /* atelier-estuary-light.min.css in Resources */,
 				AB0CC6821F75ABB30050E486 /* apache.min.js in Resources */,
@@ -1234,6 +1233,7 @@
 				AB0CC6631F75ABA80050E486 /* monokai.min.css in Resources */,
 				AB0CC66F1F75ABA80050E486 /* school-book.min.css in Resources */,
 				AB0CC6C11F75ABB30050E486 /* handlebars.min.js in Resources */,
+				AB61503A1F7C3BC300948360 /* animate-frame.txt in Resources */,
 				AB0CC68A1F75ABB30050E486 /* avrasm.min.js in Resources */,
 				AB0CC6FF1F75ABB30050E486 /* ruby.min.js in Resources */,
 				AB0CC6DE1F75ABB30050E486 /* mercury.min.js in Resources */,

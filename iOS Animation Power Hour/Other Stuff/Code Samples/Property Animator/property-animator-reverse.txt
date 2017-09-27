@@ -1,14 +1,16 @@
 let propertyAnimator = UIViewPropertyAnimator(duration: 5.0, dampingRatio: 0.7, animations: {
     square.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
 })
-// keeps the animator active when it completes its first pass. This allows us
-// to set 'isReversed' and have it still run.
+// keeps the animator active when it completes its first pass instead of going
+// to inactive. This allows us to set 'isReversed' and have it still run.
 propertyAnimator.pausesOnCompletion = true
 
 propertyAnimator.startAnimation()
 
-propertyAnimator.pauseAnimation()
+// wait 5 seconds to complete, animator pauses
 
 // reverses the direction of the animation
 propertyAnimator.isReversed = !propertyAnimator.isReversed
+// resume the animation
+propertyAnimator.startAnimation()
 

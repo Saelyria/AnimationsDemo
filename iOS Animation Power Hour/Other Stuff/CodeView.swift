@@ -8,8 +8,15 @@ class CodeView: UIView {
         }
     }
     
+    var theme: Theme {
+        get {
+            return self.textStorage.highlightr.theme
+        }
+    }
+    
     var textView: UITextView!
     fileprivate var heightConstraint: NSLayoutConstraint!
+    private let textStorage = CodeAttributedString()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,7 +29,6 @@ class CodeView: UIView {
     }
     
     func setup() {
-        let textStorage = CodeAttributedString()
         textStorage.language = "Swift"
         textStorage.highlightr.setTheme(to: "atelier-sulphurpool-light") //paraiso-dark, Androidstudio, Atelier Sulphurpool Light/Light, Dark, Docco, Github Gist, Solarized Dark
         let font = textStorage.highlightr.theme.codeFont.withSize(16)

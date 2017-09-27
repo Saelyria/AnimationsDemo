@@ -1,3 +1,6 @@
+square.backgroundColor = UIColor.red
+
 UIView.animate(withDuration: 1.0, animations: {
     square.alpha = 0
+    square.backgroundColor = UIColor.blue
 })

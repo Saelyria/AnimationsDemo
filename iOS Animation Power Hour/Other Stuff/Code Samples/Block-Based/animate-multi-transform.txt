@@ -1,13 +1,13 @@
 // rotate then translate
 UIView.animate(withDuration: 1.0, animations: {
     let rotateTransform = CGAffineTransform(rotationAngle: CGFloat.pi)
-    let rotateAndTranslateTransform = rotateTransform.translatedBy(x: 100, y: 0)
+    let rotateAndTranslateTransform = rotateTransform.translatedBy(x: 100, y: 25)
     square.transform = rotateAndTranslateTransform
 })
 
 // translate then rotate
 UIView.animate(withDuration: 1.0, animations: {
-    let translateTransform = CGAffineTransform(translationX: 100, y: 0)
+    let translateTransform = CGAffineTransform(translationX: 100, y: 25)
     let translateAndRotateTransform = translateTransform.rotated(by: CGFloat.pi)
     square.transform = translateAndRotateTransform
 })

@@ -37,11 +37,28 @@ extension UIViewController {
         return (containerView, square1, square2)
     }
     
+    func createRedSquareWithBlueSquareInside() -> (container: UIView, redSquare: UIView, blueSquare: UIView) {
+        let square1 = self.createRedSquare()
+        let square2 = self.createRedSquare(width: 50)
+        square2.backgroundColor = UIColor.blue
+        let containerView = UIView()
+        containerView.addSubview(square1)
+        square1.addSubview(square2)
+        NSLayoutConstraint(item: containerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 200).isActive = true
+        NSLayoutConstraint(item: containerView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 300).isActive = true
+        NSLayoutConstraint(item: square1, attribute: .centerX, relatedBy: .equal, toItem: containerView, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: square1, attribute: .centerY, relatedBy: .equal, toItem: containerView, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: square2, attribute: .centerX, relatedBy: .equal, toItem: square1, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: square2, attribute: .centerY, relatedBy: .equal, toItem: square1, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+        
+        return (containerView, square1, square2)
+    }
+    
     func createViewWithSquareAndLabel() -> (container: UIView, square: UIView, label: UILabel) {
         let square = self.createRedSquare(width: 80)
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
         let containerView = UIView()
         containerView.addSubview(square)
         containerView.addSubview(label)

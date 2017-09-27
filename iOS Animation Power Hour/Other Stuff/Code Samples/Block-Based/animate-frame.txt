@@ -1,0 +1,17 @@
+// animate frame
+UIView.animate(withDuration: 1.0, animations: {
+    let newX = redSquare.frame.origin.x + 50
+    let y = redSquare.frame.origin.y
+    let width = redSquare.frame.size.width
+    let height = redSquare.frame.size.height
+    redSquare.frame = CGRect(x: newX, y: y, width: width, height: height)
+})
+
+// animate bounds
+UIView.animate(withDuration: 1.0, animations: {
+    let newX = redSquare.bounds.origin.x + 50
+    let y = redSquare.bounds.origin.y
+    let width = redSquare.bounds.size.width
+    let height = redSquare.bounds.size.height
+    redSquare.bounds = CGRect(x: newX, y: y, width: width, height: height)
+})

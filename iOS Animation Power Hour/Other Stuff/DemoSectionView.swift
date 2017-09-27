@@ -15,6 +15,7 @@ class DemoSectionViewAction {
 }
 
 class DemoSectionView: CollapsableView {
+    private var sampleCodeView: CodeView!
     private var animatingView: UIView?
     private var animationClosure: (() -> Void)?
     private var actions = [DemoSectionViewAction]()
@@ -26,7 +27,6 @@ class DemoSectionView: CollapsableView {
         let descriptionLabel = UILabel()
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.text = description
         descriptionLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
         descriptionLabel.textColor = UIColor.darkGray
         contentView.addSubview(descriptionLabel)
@@ -81,6 +81,7 @@ class DemoSectionView: CollapsableView {
         
         self.init(title: title, contentView: contentView)
         self.animatingView = animatingView
+        self.sampleCodeView = sampleCodeView
         self.actions = actions
         for action in actions {
             let button = UIButton(type: .system)
@@ -93,12 +94,37 @@ class DemoSectionView: CollapsableView {
             buttonsStackView.addArrangedSubview(button)
             button.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }
+        descriptionLabel.attributedText = self.attributedStringWithMonospace(inText: description)
     }
     
     @objc func buttonPressed(_ button: UIButton) {
         let action = self.actions.filter { $0.buttonTitle == button.title(for: .normal) }.first
         if let action = action {
             action.actionBlock()
+        }
+    }
+    
+    func attributedStringWithMonospace(inText text: String) -> NSAttributedString {
+        let monospaceFont = UIFont(name: "Menlo-Regular", size: 16)
+        guard monospaceFont != nil else { return NSAttributedString(string: text) }
+        
+        let attributedText = NSMutableAttributedString(string: text)
+        do {
+            let regexString = "`([^`]*)`"
+            let regex = try NSRegularExpression(pattern: regexString, options: [])
+            
+            let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.characters.count))
+            
+            for match in matches {
+                let rangeBetweenTildes = match.range(at: 1)
+                let attributes = [NSAttributedStringKey.font : monospaceFont!, NSAttributedStringKey.foregroundColor : UIColor(red: 82/255, green: 109/255, blue: 153/255, alpha: 1)]
+                attributedText.setAttributes(attributes, range: rangeBetweenTildes)
+            }
+            
+            attributedText.mutableString.replaceOccurrences(of: "`", with: "", options: [], range: NSRange(location: 0, length: attributedText.length))
+            return  attributedText
+        } catch _ {
+            return NSAttributedString(string: text)
         }
     }
 }
