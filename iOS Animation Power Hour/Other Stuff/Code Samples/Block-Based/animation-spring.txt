@@ -1,0 +1,7 @@
+UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
+    square1.transform = CGAffineTransform(translationX: 100, y: 0)
+}, completion: nil)
+
+UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
+    square2.transform = CGAffineTransform(translationX: 100, y: 0)
+}, completion: nil)

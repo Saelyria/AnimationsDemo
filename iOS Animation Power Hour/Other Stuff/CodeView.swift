@@ -24,7 +24,9 @@ class CodeView: UIView {
     func setup() {
         let textStorage = CodeAttributedString()
         textStorage.language = "Swift"
-        textStorage.highlightr.setTheme(to: "paraiso-dark")
+        textStorage.highlightr.setTheme(to: "atelier-sulphurpool-light") //paraiso-dark, Androidstudio, Atelier Sulphurpool Light/Light, Dark, Docco, Github Gist, Solarized Dark
+        let font = textStorage.highlightr.theme.codeFont.withSize(16)
+        textStorage.highlightr.theme.setCodeFont(font)
         
         let layoutManager = NSLayoutManager()
         textStorage.addLayoutManager(layoutManager)
@@ -35,6 +37,7 @@ class CodeView: UIView {
         self.textView = UITextView(frame: self.frame, textContainer: textContainer)
         self.textView.translatesAutoresizingMaskIntoConstraints = false
         self.textView.isScrollEnabled = false
+        self.textView.isEditable = false
         self.textView.textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         self.textView.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
         self.addSubview(self.textView)

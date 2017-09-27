@@ -1,11 +1,13 @@
-let square = UIView()
-
+// rotate then translate
 UIView.animate(withDuration: 1.0, animations: {
-    if (square.transform == CGAffineTransform.identity) {
-        let translateTransform = CGAffineTransform(translationX: 100, y: 0)
-        let scaleTransform = CGAffineTransform(scaleX: 1.6, y: 1.6)
-        square.transform = translateTransform.concatenating(scaleTransform)
-    } else {
-        square.transform = CGAffineTransform.identity
-    }
+    let rotateTransform = CGAffineTransform(rotationAngle: CGFloat.pi)
+    let rotateAndTranslateTransform = rotateTransform.translatedBy(x: 100, y: 0)
+    square.transform = rotateAndTranslateTransform
+})
+
+// translate then rotate
+UIView.animate(withDuration: 1.0, animations: {
+    let translateTransform = CGAffineTransform(translationX: 100, y: 0)
+    let translateAndRotateTransform = translateTransform.rotated(by: CGFloat.pi)
+    square.transform = translateAndRotateTransform
 })

@@ -2,6 +2,13 @@
 import UIKit
 
 extension UIButton {
+    override open var isEnabled: Bool {
+        didSet {
+            self.titleLabel?.textColor = (self.isEnabled) ? self.tintColor : UIColor.lightGray
+            self.layer.borderColor = (self.isEnabled) ? self.tintColor.cgColor : UIColor.lightGray.cgColor
+        }
+    }
+    
     func setupWithOutline() {
         self.layer.borderWidth = 1
         self.layer.borderColor = self.tintColor.cgColor

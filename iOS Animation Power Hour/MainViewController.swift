@@ -16,8 +16,11 @@ class MainViewController: UIViewController {
         self.blockAnimationsButton.setTitle("Block-Based Animations", for: .normal)
         self.blockAnimationsButton.addTarget(self, action: #selector(basicAnimationsPressed), for: .touchUpInside)
         self.propertyAnimatorButton.setTitle("Animations with a Property Animator", for: .normal)
+        self.propertyAnimatorButton.addTarget(self, action: #selector(propertyAnimatorPressed), for: .touchUpInside)
         self.pushAnimationButton.setTitle("Push Animation", for: .normal)
+        self.pushAnimationButton.addTarget(self, action: #selector(pushAnimationPressed), for: .touchUpInside)
         self.modalAnimationsButton.setTitle("Modal Animations", for: .normal)
+        self.modalAnimationsButton.addTarget(self, action: #selector(modalAnimationsPressed), for: .touchUpInside)
         
         let buttons = [ self.blockAnimationsButton, self.propertyAnimatorButton, self.pushAnimationButton, self.modalAnimationsButton ]
         buttons.forEach { button in self.setupStyleOnButton(button) }
@@ -41,19 +44,20 @@ class MainViewController: UIViewController {
     }
     
     @objc func basicAnimationsPressed() {
-        let basicAnimsVC = BasicAnimationsViewController()
+        let basicAnimsVC = BlockAnimationsViewController()
         self.navigationController?.pushViewController(basicAnimsVC, animated: true)
     }
     
-    func propertyAnimatorPressed() {
+    @objc func propertyAnimatorPressed() {
+        let propertyAnimatorVC = PropertyAnimatorViewController()
+        self.navigationController?.pushViewController(propertyAnimatorVC, animated: true)
+    }
+    
+    @objc func pushAnimationPressed() {
         
     }
     
-    func pushAnimationPressed() {
-        
-    }
-    
-    func modalAnimationsPressed() {
+    @objc func modalAnimationsPressed() {
         
     }
 }

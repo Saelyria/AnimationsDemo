@@ -264,6 +264,13 @@
 		AB0CC7281F75B1A20050E486 /* animate-alpha.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB0CC7271F75B1A20050E486 /* animate-alpha.txt */; };
 		AB0CC72A1F75B44E0050E486 /* DemoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */; };
 		AB0CC72C1F7949B10050E486 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CC72B1F7949B10050E486 /* CodeView.swift */; };
+		AB6150281F7AA42A00948360 /* animation-spring.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150271F7AA42A00948360 /* animation-spring.txt */; };
+		AB61502E1F7AAE1800948360 /* animation-spring-velocity.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB61502D1F7AAE1800948360 /* animation-spring-velocity.txt */; };
+		AB6150301F7AC7E100948360 /* PropertyAnimatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61502F1F7AC7E100948360 /* PropertyAnimatorViewController.swift */; };
+		AB6150321F7AC97C00948360 /* UIViewController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6150311F7AC97C00948360 /* UIViewController+Utilities.swift */; };
+		AB6150341F7AD89B00948360 /* property-animator-reverse.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150331F7AD89B00948360 /* property-animator-reverse.txt */; };
+		AB6150361F7AF40E00948360 /* property-animator-basics.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150351F7AF40E00948360 /* property-animator-basics.txt */; };
+		AB6150381F7AF63700948360 /* property-animator-states.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150371F7AF63700948360 /* property-animator-states.txt */; };
 		AB8D55AA1F79603100C983B4 /* CollapsableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8D55A91F79603100C983B4 /* CollapsableView.swift */; };
 		AB8D55AC1F79800000C983B4 /* animate-color.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AB1F79800000C983B4 /* animate-color.txt */; };
 		AB8D55AE1F798E9900C983B4 /* animate-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AD1F798E9900C983B4 /* animate-transform.txt */; };
@@ -272,7 +279,7 @@
 		AB8D55B41F79ABD600C983B4 /* animation-options-current-state.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55B31F79ABD600C983B4 /* animation-options-current-state.txt */; };
 		AB8D55B61F79AC2900C983B4 /* animation-options-curves.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55B51F79AC2900C983B4 /* animation-options-curves.txt */; };
 		ABE525421F744B640087D70F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE525411F744B640087D70F /* AppDelegate.swift */; };
-		ABE525441F744B640087D70F /* BasicAnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE525431F744B640087D70F /* BasicAnimationsViewController.swift */; };
+		ABE525441F744B640087D70F /* BlockAnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE525431F744B640087D70F /* BlockAnimationsViewController.swift */; };
 		ABE525491F744B640087D70F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE525481F744B640087D70F /* Assets.xcassets */; };
 		ABE5254C1F744B640087D70F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE5254A1F744B640087D70F /* LaunchScreen.storyboard */; };
 		ABE525541F744CF30087D70F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE525531F744CF30087D70F /* MainViewController.swift */; };
@@ -537,6 +544,13 @@
 		AB0CC7271F75B1A20050E486 /* animate-alpha.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-alpha.txt"; sourceTree = "<group>"; };
 		AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSectionView.swift; sourceTree = "<group>"; };
 		AB0CC72B1F7949B10050E486 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		AB6150271F7AA42A00948360 /* animation-spring.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animation-spring.txt"; sourceTree = "<group>"; };
+		AB61502D1F7AAE1800948360 /* animation-spring-velocity.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animation-spring-velocity.txt"; sourceTree = "<group>"; };
+		AB61502F1F7AC7E100948360 /* PropertyAnimatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyAnimatorViewController.swift; sourceTree = "<group>"; };
+		AB6150311F7AC97C00948360 /* UIViewController+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utilities.swift"; sourceTree = "<group>"; };
+		AB6150331F7AD89B00948360 /* property-animator-reverse.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-reverse.txt"; sourceTree = "<group>"; };
+		AB6150351F7AF40E00948360 /* property-animator-basics.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-basics.txt"; sourceTree = "<group>"; };
+		AB6150371F7AF63700948360 /* property-animator-states.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-states.txt"; sourceTree = "<group>"; };
 		AB8D55A91F79603100C983B4 /* CollapsableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableView.swift; sourceTree = "<group>"; };
 		AB8D55AB1F79800000C983B4 /* animate-color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-color.txt"; sourceTree = "<group>"; };
 		AB8D55AD1F798E9900C983B4 /* animate-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-transform.txt"; sourceTree = "<group>"; };
@@ -546,7 +560,7 @@
 		AB8D55B51F79AC2900C983B4 /* animation-options-curves.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animation-options-curves.txt"; sourceTree = "<group>"; };
 		ABE5253E1F744B640087D70F /* iOS Animation Power Hour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Animation Power Hour.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE525411F744B640087D70F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ABE525431F744B640087D70F /* BasicAnimationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAnimationsViewController.swift; sourceTree = "<group>"; };
+		ABE525431F744B640087D70F /* BlockAnimationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockAnimationsViewController.swift; sourceTree = "<group>"; };
 		ABE525481F744B640087D70F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABE5254B1F744B640087D70F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABE5254D1F744B640087D70F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -885,6 +899,8 @@
 				AB8D55B11F79A3E300C983B4 /* animation-options-repeat.txt */,
 				AB8D55B31F79ABD600C983B4 /* animation-options-current-state.txt */,
 				AB8D55B51F79AC2900C983B4 /* animation-options-curves.txt */,
+				AB6150271F7AA42A00948360 /* animation-spring.txt */,
+				AB61502D1F7AAE1800948360 /* animation-spring-velocity.txt */,
 			);
 			path = "Block-Based";
 			sourceTree = "<group>";
@@ -892,6 +908,9 @@
 		AB8D55B81F79B3B300C983B4 /* Property Animator */ = {
 			isa = PBXGroup;
 			children = (
+				AB6150351F7AF40E00948360 /* property-animator-basics.txt */,
+				AB6150371F7AF63700948360 /* property-animator-states.txt */,
+				AB6150331F7AD89B00948360 /* property-animator-reverse.txt */,
 			);
 			path = "Property Animator";
 			sourceTree = "<group>";
@@ -918,7 +937,7 @@
 				ABE5255B1F759D8B0087D70F /* Modal Animations */,
 				ABE525411F744B640087D70F /* AppDelegate.swift */,
 				ABE525531F744CF30087D70F /* MainViewController.swift */,
-				ABE525551F7597B20087D70F /* Basic Animations */,
+				ABE525551F7597B20087D70F /* Block Animations */,
 				ABE525591F759D730087D70F /* Property Animators */,
 				ABE5255A1F759D7F0087D70F /* Push Animations */,
 				ABE525561F759A360087D70F /* Other Stuff */,
@@ -930,17 +949,18 @@
 			path = "iOS Animation Power Hour";
 			sourceTree = "<group>";
 		};
-		ABE525551F7597B20087D70F /* Basic Animations */ = {
+		ABE525551F7597B20087D70F /* Block Animations */ = {
 			isa = PBXGroup;
 			children = (
-				ABE525431F744B640087D70F /* BasicAnimationsViewController.swift */,
+				ABE525431F744B640087D70F /* BlockAnimationsViewController.swift */,
 			);
-			path = "Basic Animations";
+			path = "Block Animations";
 			sourceTree = "<group>";
 		};
 		ABE525561F759A360087D70F /* Other Stuff */ = {
 			isa = PBXGroup;
 			children = (
+				AB6150311F7AC97C00948360 /* UIViewController+Utilities.swift */,
 				ABE525571F759A610087D70F /* UIButton+Utilities.swift */,
 				AB8D55A91F79603100C983B4 /* CollapsableView.swift */,
 				AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */,
@@ -953,6 +973,7 @@
 		ABE525591F759D730087D70F /* Property Animators */ = {
 			isa = PBXGroup;
 			children = (
+				AB61502F1F7AC7E100948360 /* PropertyAnimatorViewController.swift */,
 			);
 			path = "Property Animators";
 			sourceTree = "<group>";
@@ -1098,6 +1119,7 @@
 				AB0CC6651F75ABA80050E486 /* ocean.min.css in Resources */,
 				AB0CC6F91F75ABB30050E486 /* q.min.js in Resources */,
 				AB0CC65C1F75ABA80050E486 /* idea.min.css in Resources */,
+				AB6150361F7AF40E00948360 /* property-animator-basics.txt in Resources */,
 				AB0CC7061F75ABB30050E486 /* smali.min.js in Resources */,
 				AB0CC6301F75ABA80050E486 /* arta.min.css in Resources */,
 				AB0CC6C31F75ABB30050E486 /* haxe.min.js in Resources */,
@@ -1152,6 +1174,7 @@
 				AB0CC6F61F75ABB30050E486 /* puppet.min.js in Resources */,
 				AB0CC6711F75ABA80050E486 /* solarized-dark.min.css in Resources */,
 				AB0CC6A61F75ABB30050E486 /* dns.min.js in Resources */,
+				AB6150281F7AA42A00948360 /* animation-spring.txt in Resources */,
 				AB0CC6C71F75ABB30050E486 /* inform7.min.js in Resources */,
 				AB0CC63D1F75ABA80050E486 /* atelier-lakeside-light.min.css in Resources */,
 				AB0CC66B1F75ABA80050E486 /* qtcreator_dark.min.css in Resources */,
@@ -1244,6 +1267,7 @@
 				AB0CC7211F75ABB30050E486 /* xl.min.js in Resources */,
 				AB0CC6C91F75ABB30050E486 /* irpf90.min.js in Resources */,
 				AB0CC6DD1F75ABB30050E486 /* mel.min.js in Resources */,
+				AB6150341F7AD89B00948360 /* property-animator-reverse.txt in Resources */,
 				AB0CC6331F75ABA80050E486 /* atelier-cave-light.min.css in Resources */,
 				AB0CC70F1F75ABB30050E486 /* subunit.min.js in Resources */,
 				AB0CC68D1F75ABB30050E486 /* bash.min.js in Resources */,
@@ -1258,6 +1282,7 @@
 				AB0CC6C61F75ABB30050E486 /* http.min.js in Resources */,
 				AB0CC6F81F75ABB30050E486 /* python.min.js in Resources */,
 				AB0CC6611F75ABA80050E486 /* mono-blue.min.css in Resources */,
+				AB61502E1F7AAE1800948360 /* animation-spring-velocity.txt in Resources */,
 				AB0CC6CA1F75ABB30050E486 /* java.min.js in Resources */,
 				AB0CC6F21F75ABB30050E486 /* processing.min.js in Resources */,
 				AB0CC6CB1F75ABB30050E486 /* javascript.min.js in Resources */,
@@ -1274,6 +1299,7 @@
 				AB0CC6451F75ABA80050E486 /* atelier-sulphurpool-light.min.css in Resources */,
 				AB0CC63C1F75ABA80050E486 /* atelier-lakeside-dark.min.css in Resources */,
 				AB0CC7021F75ABB30050E486 /* scala.min.js in Resources */,
+				AB6150381F7AF63700948360 /* property-animator-states.txt in Resources */,
 				AB0CC6DA1F75ABB30050E486 /* mathematica.min.js in Resources */,
 				AB0CC6DB1F75ABB30050E486 /* matlab.min.js in Resources */,
 				ABE525491F744B640087D70F /* Assets.xcassets in Resources */,
@@ -1301,12 +1327,14 @@
 			files = (
 				AB0CC62B1F75AB810050E486 /* Theme.swift in Sources */,
 				AB0CC62A1F75AB7F0050E486 /* HTMLUtils.swift in Sources */,
+				AB6150301F7AC7E100948360 /* PropertyAnimatorViewController.swift in Sources */,
 				AB0CC6291F75AB7E0050E486 /* Highlightr.swift in Sources */,
 				AB0CC72C1F7949B10050E486 /* CodeView.swift in Sources */,
 				AB8D55AA1F79603100C983B4 /* CollapsableView.swift in Sources */,
 				AB0CC6281F75AB7C0050E486 /* CodeAttributedString.swift in Sources */,
 				ABE525541F744CF30087D70F /* MainViewController.swift in Sources */,
-				ABE525441F744B640087D70F /* BasicAnimationsViewController.swift in Sources */,
+				AB6150321F7AC97C00948360 /* UIViewController+Utilities.swift in Sources */,
+				ABE525441F744B640087D70F /* BlockAnimationsViewController.swift in Sources */,
 				ABE525581F759A610087D70F /* UIButton+Utilities.swift in Sources */,
 				AB0CC72A1F75B44E0050E486 /* DemoSectionView.swift in Sources */,
 				ABE525421F744B640087D70F /* AppDelegate.swift in Sources */,

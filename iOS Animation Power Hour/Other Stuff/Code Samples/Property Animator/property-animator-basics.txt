@@ -1,0 +1,8 @@
+var propertyAnimator = UIViewPropertyAnimator(duration: 2.0, curve: .easeOut, animations: {
+    animatingView.alpha = 0
+    animatingView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+})
+
+propertyAnimator.startAnimating()
+
+propertyAnimator.pauseAnimation()

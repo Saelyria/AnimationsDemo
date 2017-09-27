@@ -2,12 +2,15 @@
 import UIKit
 
 class DemoSectionViewAction {
-    var buttonTitle: String
-    var actionBlock: () -> Void
+    let buttonTitle: String
+    let actionBlock: () -> Void
+    let shouldStartEnabled: Bool
+    var button: UIButton?
     
-    init(buttonTitle: String, actionBlock: @escaping () -> Void) {
+    init(buttonTitle: String, startsEnabled: Bool = true, actionBlock: @escaping () -> Void) {
         self.buttonTitle = buttonTitle
         self.actionBlock = actionBlock
+        self.shouldStartEnabled = startsEnabled
     }
 }
 
@@ -35,6 +38,7 @@ class DemoSectionView: CollapsableView {
         contentView.addSubview(animatingViewSectionTitle)
         
         let animatingViewSection = UIView()
+        animatingViewSection.clipsToBounds = true
         animatingViewSection.translatesAutoresizingMaskIntoConstraints = false
         animatingViewSection.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
         animatingViewSection.layer.cornerRadius = 8
@@ -80,8 +84,10 @@ class DemoSectionView: CollapsableView {
         self.actions = actions
         for action in actions {
             let button = UIButton(type: .system)
+            action.button = button
             button.setTitle(action.buttonTitle, for: .normal)
             button.setupWithOutline()
+            button.isEnabled = action.shouldStartEnabled
             NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 40).isActive = true
             NSLayoutConstraint(item: button, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .height, multiplier: 1, constant: 90).isActive = true
             buttonsStackView.addArrangedSubview(button)

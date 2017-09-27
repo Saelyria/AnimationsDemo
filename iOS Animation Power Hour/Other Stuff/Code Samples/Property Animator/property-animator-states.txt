@@ -1,0 +1,22 @@
+var propertyAnimator = UIViewPropertyAnimator(duration: 2.0, curve: .easeOut, animations: {
+    animatingView.alpha = 0
+    animatingView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+}) // state = inactive
+
+propertyAnimator.startAnimating() // state = active
+propertyAnimator.pauseAnimation() // still active
+
+if (manuallyFinish) {
+    // stop the animation, indicating that we will manually call
+    // finishAnimation(at:)
+    propertyAnimator.stopAnimation(false) // state = stopped
+
+    // finish the animation. Possible parameters values are
+    // .start, .current, and .end
+    propertyAnimator.finishAnimation(at: .end)
+} else {
+    // stop the animation, indicating that we want it to
+    // immediately finish and set the view's properties
+    // to their current visible values.
+    propertyAnimator.stopAnimation(true) // state = inactive
+}
