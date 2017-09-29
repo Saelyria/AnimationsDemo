@@ -13,4 +13,3 @@ propertyAnimator.startAnimation()
 propertyAnimator.isReversed = !propertyAnimator.isReversed
 // resume the animation
 propertyAnimator.startAnimation()
-

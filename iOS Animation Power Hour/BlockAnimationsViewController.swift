@@ -77,7 +77,7 @@ fileprivate extension BlockAnimationsViewController {
         let sampleCode = self.stringFromCodeSampleFile(named: "animate-alpha")
         let animatingView = self.createRedSquare()
         
-        let action = DemoSectionViewAction(buttonTitle: "Animate", actionBlock: {
+        let action = DemoSectionViewButtonAction(buttonTitle: "Animate", actionBlock: {
             UIView.animate(withDuration: 1.0, animations: {
                 if (animatingView.alpha > 0) {
                     animatingView.alpha = 0
@@ -93,20 +93,20 @@ fileprivate extension BlockAnimationsViewController {
             })
         })
 
-        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: [action])
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, buttonActions: [action])
         return animationSection
     }
     
     func createFrameSection() -> DemoSectionView {
         let sectionTitle = "Frame and Bounds"
-        let description = "Before Autolayout, iOS views were laid out by settings the `x`/`y`/`width`/`height` of views' `frame` and `bounds` properties, called 'springs and struts'. This method has been largely replaced with constraints, though both frame and bounds are still important values (and animatable). Understanding the difference between them is important as, in many cases, they can be the same value.\n\nFirst, frame. A view's frame is its location in its superview's coordinate system. So, a frame's `x` and `y` properties are the distance from the superview's origin (its top left corner). Think of a picture frame on a wall; the frame is the positioning on the wall along with its height and width.\n\nNext, bounds. A view's bounds is the visible portion of its content in its own coordinate system, where its origin is always the top-left corner of its frame. Think of it like two pieces of paper on top of each other. The frame is like a square hole cut into the top piece of paper that lets the bottom piece of paper show through. The bounds is the bottom piece of paper. Subviews base their frame on their superview’s bounds (the bottom piece of paper), so moving the bottom paper moves the view’s subviews accordingly. This is how scroll views work; their frame (position in their superview) remains unchanged when it scrolls, though it changes the `y` of its bounds so its subviews move up or down.\n\nThe example below demonstrates animating these properties individually to help visualize the difference. The blue square is a subview of the red square; the 'Animate Frame' and 'Animate Bounds' buttons will change the frame and bounds of the red square. When we move the red square's frame, it (and its subviews) move in the grey space's coordinate system. When we move the red square's bounds, the red square's position in its superview doesn't change, but its subviews move. Moving the bounds' `x` positively by `50` sets the top left corner of the visible area in the red square to `(50,0)`. Because the blue square's frame is based on the orignal top-left corner of the red square `(0,0)`, it moves to the right along with that original origin."
+        let description = "Before Autolayout, iOS views were laid out by settings the `x`/`y`/`width`/`height` of views' `frame` and `bounds` properties, called 'springs and struts'. This method has been largely replaced with constraints, though both frame and bounds are still important values (and animatable). Understanding the difference between them is important as, in many cases, they can be the same value.\n\nFirst, frame. A view's frame is its location in its superview's coordinate system. So, a frame's `x` and `y` properties are the distance from the superview's origin (its top left corner). Think of a picture frame on a wall; the frame is the positioning on the wall along with its height and width.\n\nNext, bounds. A view's bounds is the visible portion of its content in its own coordinate system, where its origin is always the top-left corner of its frame. Think of it like two pieces of paper on top of each other. The frame is like a square hole cut into the top piece of paper that lets the bottom piece of paper show through. The bounds is which part of the bottom piece of paper is being seen through the hole. Subviews base their frame on their superview’s bounds (the bottom piece of paper), so moving the bottom paper moves the view’s subviews accordingly. This is how scroll views work; their frame (position in their superview) remains unchanged when it scrolls, though it changes the `y` of its bounds so its subviews move up or down.\n\nThe example below demonstrates animating these properties individually to help visualize the difference. The blue square is a subview of the red square; the 'Animate Frame' and 'Animate Bounds' buttons will change the frame and bounds of the red square. When we move the red square's frame, it (and its subviews) move in the grey space's coordinate system. When we move the red square's bounds, the red square's position in its superview doesn't change, but its subviews move. Moving the bounds' `x` positively by `50` sets the top left corner of the visible area in the red square to `(50,0)`. Because the blue square's frame is based on the orignal top-left corner of the red square `(0,0)`, it moves to the right along with that original origin."
         let sampleCode = self.stringFromCodeSampleFile(named: "animate-frame")
         let (animatingView, redSquare, _) = self.createRedSquareWithBlueSquareInside()
         redSquare.clipsToBounds = true
         
         var originalFrame: CGRect?
         var originalBounds: CGRect?
-        let frameAction = DemoSectionViewAction(buttonTitle: "Animate Frame", actionBlock: {
+        let frameAction = DemoSectionViewButtonAction(buttonTitle: "Animate Frame", actionBlock: {
             if (originalFrame == nil) {
                 originalFrame = redSquare.frame
             }
@@ -121,7 +121,7 @@ fileprivate extension BlockAnimationsViewController {
             })
         })
         
-        let boundsAction = DemoSectionViewAction(buttonTitle: "Animate Bounds", actionBlock: {
+        let boundsAction = DemoSectionViewButtonAction(buttonTitle: "Animate Bounds", actionBlock: {
             if (originalBounds == nil) {
                 originalBounds = redSquare.bounds
             }
@@ -137,7 +137,7 @@ fileprivate extension BlockAnimationsViewController {
         })
         
         let actions = [frameAction, boundsAction]
-        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: actions)
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, buttonActions: actions)
         return animationSection
     }
     
@@ -147,8 +147,8 @@ fileprivate extension BlockAnimationsViewController {
         let sampleCode = self.stringFromCodeSampleFile(named: "animate-transform")
         let animatingView = self.createRedSquare()
 
-        var rotateAction, scaleAction, translateAction, resetAction: DemoSectionViewAction?
-        translateAction = DemoSectionViewAction(buttonTitle: "Animate translation", actionBlock: {
+        var rotateAction, scaleAction, translateAction, resetAction: DemoSectionViewButtonAction?
+        translateAction = DemoSectionViewButtonAction(buttonTitle: "Animate translation", actionBlock: {
             translateAction?.button?.isEnabled = false
             rotateAction?.button?.isEnabled = false
             scaleAction?.button?.isEnabled = false
@@ -158,7 +158,7 @@ fileprivate extension BlockAnimationsViewController {
             })
         })
         
-        rotateAction = DemoSectionViewAction(buttonTitle: "Animate rotation", actionBlock: {
+        rotateAction = DemoSectionViewButtonAction(buttonTitle: "Animate rotation", actionBlock: {
             translateAction?.button?.isEnabled = false
             rotateAction?.button?.isEnabled = false
             scaleAction?.button?.isEnabled = false
@@ -168,7 +168,7 @@ fileprivate extension BlockAnimationsViewController {
             })
         })
         
-        scaleAction = DemoSectionViewAction(buttonTitle: "Animate scale", actionBlock: {
+        scaleAction = DemoSectionViewButtonAction(buttonTitle: "Animate scale", actionBlock: {
             translateAction?.button?.isEnabled = false
             rotateAction?.button?.isEnabled = false
             scaleAction?.button?.isEnabled = false
@@ -178,7 +178,7 @@ fileprivate extension BlockAnimationsViewController {
             })
         })
         
-        resetAction = DemoSectionViewAction(buttonTitle: "Reset", startsEnabled: false, actionBlock: {
+        resetAction = DemoSectionViewButtonAction(buttonTitle: "Reset", startsEnabled: false, actionBlock: {
             translateAction?.button?.isEnabled = true
             rotateAction?.button?.isEnabled = true
             scaleAction?.button?.isEnabled = true
@@ -189,7 +189,7 @@ fileprivate extension BlockAnimationsViewController {
         })
         
         let actions = [translateAction!, rotateAction!, scaleAction!, resetAction!]
-        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: actions)
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, buttonActions: actions)
         return animationSection
     }
     
@@ -199,8 +199,8 @@ fileprivate extension BlockAnimationsViewController {
         let sampleCode = self.stringFromCodeSampleFile(named: "animate-multi-transform")
         let animatingView = self.createRedSquare()
         
-        var rotateThenTranslateAction, translateThenRotateAction, resetAction: DemoSectionViewAction?
-        rotateThenTranslateAction = DemoSectionViewAction(buttonTitle: "Rotate then Translate", actionBlock: {
+        var rotateThenTranslateAction, translateThenRotateAction, resetAction: DemoSectionViewButtonAction?
+        rotateThenTranslateAction = DemoSectionViewButtonAction(buttonTitle: "Rotate then Translate", actionBlock: {
             rotateThenTranslateAction?.button?.isEnabled = false
             translateThenRotateAction?.button?.isEnabled = false
             resetAction?.button?.isEnabled = true
@@ -212,7 +212,7 @@ fileprivate extension BlockAnimationsViewController {
             })
         })
         
-        translateThenRotateAction = DemoSectionViewAction(buttonTitle: "Translate then Rotate", actionBlock: {
+        translateThenRotateAction = DemoSectionViewButtonAction(buttonTitle: "Translate then Rotate", actionBlock: {
             rotateThenTranslateAction?.button?.isEnabled = false
             translateThenRotateAction?.button?.isEnabled = false
             resetAction?.button?.isEnabled = true
@@ -224,19 +224,18 @@ fileprivate extension BlockAnimationsViewController {
             })
         })
         
-        resetAction = DemoSectionViewAction(buttonTitle: "Reset", startsEnabled: false, actionBlock: {
+        resetAction = DemoSectionViewButtonAction(buttonTitle: "Reset", startsEnabled: false, actionBlock: {
             rotateThenTranslateAction?.button?.isEnabled = true
             translateThenRotateAction?.button?.isEnabled = true
             resetAction?.button?.isEnabled = false
             
             UIView.animate(withDuration: 1.0, animations: {
-                animatingView.center = CGPoint(x: 0, y: 0)
                 animatingView.transform = CGAffineTransform.identity
             })
         })
         
         let actions = [rotateThenTranslateAction!, translateThenRotateAction!, resetAction!]
-        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: actions)
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, buttonActions: actions)
         return animationSection
     }
     
@@ -246,8 +245,8 @@ fileprivate extension BlockAnimationsViewController {
         let sampleCode = self.stringFromCodeSampleFile(named: "animation-options-repeat")
         let animatingView = self.createRedSquare()
         
-        var animateAction, stopAnimateAction: DemoSectionViewAction?
-        animateAction = DemoSectionViewAction(buttonTitle: "Animate", actionBlock: {
+        var animateAction, stopAnimateAction: DemoSectionViewButtonAction?
+        animateAction = DemoSectionViewButtonAction(buttonTitle: "Animate", actionBlock: {
             UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .autoreverse], animations: {
                 animateAction?.button?.isEnabled = false
                 stopAnimateAction?.button?.isEnabled = true
@@ -256,7 +255,7 @@ fileprivate extension BlockAnimationsViewController {
             }, completion: nil)
         })
         
-        stopAnimateAction = DemoSectionViewAction(buttonTitle: "Stop", startsEnabled: false, actionBlock: {
+        stopAnimateAction = DemoSectionViewButtonAction(buttonTitle: "Stop", startsEnabled: false, actionBlock: {
             animateAction?.button?.isEnabled = true
             stopAnimateAction?.button?.isEnabled = false
             animatingView.layer.removeAllAnimations()
@@ -264,7 +263,7 @@ fileprivate extension BlockAnimationsViewController {
             animatingView.transform = CGAffineTransform.identity
         })
         
-        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: [animateAction!, stopAnimateAction!])
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, buttonActions: [animateAction!, stopAnimateAction!])
         return animationSection
     }
     
@@ -274,7 +273,7 @@ fileprivate extension BlockAnimationsViewController {
         let sampleCode = self.stringFromCodeSampleFile(named: "animation-options-current-state")
         let animatingView = self.createRedSquare()
 
-        let action = DemoSectionViewAction(buttonTitle: "Animate", actionBlock: {
+        let action = DemoSectionViewButtonAction(buttonTitle: "Animate", actionBlock: {
             UIView.animate(withDuration: 1.0, delay: 0.0, options: .beginFromCurrentState, animations: {
                 if (animatingView.alpha > 0) {
                     animatingView.alpha = 0
@@ -284,7 +283,7 @@ fileprivate extension BlockAnimationsViewController {
             }, completion: nil)
         })
         
-        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: [action])
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, buttonActions: [action])
         return animationSection
     }
     
@@ -294,7 +293,7 @@ fileprivate extension BlockAnimationsViewController {
         let sampleCode = self.stringFromCodeSampleFile(named: "animation-options-curves")
         
         let (animatingView, square1, square2) = self.createViewWithTwoRedSquares()
-        let action = DemoSectionViewAction(buttonTitle: "Animate", actionBlock: {
+        let action = DemoSectionViewButtonAction(buttonTitle: "Animate", actionBlock: {
             UIView.animate(withDuration: 1.0, animations: {
                 if (square1.transform == CGAffineTransform.identity) {
                     square1.transform = CGAffineTransform(translationX: 100, y: 0)
@@ -312,7 +311,7 @@ fileprivate extension BlockAnimationsViewController {
             }, completion: nil)
         })
         
-        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: [action])
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, buttonActions: [action])
         return animationSection
     }
     
@@ -322,7 +321,7 @@ fileprivate extension BlockAnimationsViewController {
         let sampleCode = self.stringFromCodeSampleFile(named: "animation-spring")
         
         let (animatingView, square1, square2) = self.createViewWithTwoRedSquares()
-        let action = DemoSectionViewAction(buttonTitle: "Animate", actionBlock: {
+        let action = DemoSectionViewButtonAction(buttonTitle: "Animate", actionBlock: {
             UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
                 if (square1.transform == CGAffineTransform.identity) {
                     square1.transform = CGAffineTransform(translationX: 100, y: 0)
@@ -340,7 +339,7 @@ fileprivate extension BlockAnimationsViewController {
             }, completion: nil)
         })
         
-        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: [action])
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, buttonActions: [action])
         return animationSection
     }
     
@@ -350,7 +349,7 @@ fileprivate extension BlockAnimationsViewController {
         let sampleCode = self.stringFromCodeSampleFile(named: "animation-spring-velocity")
         
         let (animatingView, square1, square2) = self.createViewWithTwoRedSquares()
-        let action = DemoSectionViewAction(buttonTitle: "Animate", actionBlock: {
+        let action = DemoSectionViewButtonAction(buttonTitle: "Animate", actionBlock: {
             UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 10.0, options: [], animations: {
                 if (square1.transform == CGAffineTransform.identity) {
                     square1.transform = CGAffineTransform(translationX: 100, y: 0)
@@ -368,7 +367,7 @@ fileprivate extension BlockAnimationsViewController {
             }, completion: nil)
         })
         
-        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, actions: [action])
+        let animationSection = DemoSectionView(title: sectionTitle, description: description, sampleCode: sampleCode, animatingView: animatingView, buttonActions: [action])
         return animationSection
     }
 }

@@ -272,6 +272,13 @@
 		AB6150361F7AF40E00948360 /* property-animator-basics.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150351F7AF40E00948360 /* property-animator-basics.txt */; };
 		AB6150381F7AF63700948360 /* property-animator-states.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150371F7AF63700948360 /* property-animator-states.txt */; };
 		AB61503A1F7C3BC300948360 /* animate-frame.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150391F7C3BC300948360 /* animate-frame.txt */; };
+		AB61503C1F7D4D9F00948360 /* property-animator-scrubbing.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB61503B1F7D4D9F00948360 /* property-animator-scrubbing.txt */; };
+		AB61503E1F7EB7E700948360 /* property-animator-timing-curves.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB61503D1F7EB7E700948360 /* property-animator-timing-curves.txt */; };
+		AB6150401F7EB80300948360 /* property-animator-curve-providers.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB61503F1F7EB80300948360 /* property-animator-curve-providers.txt */; };
+		AB6150481F7EC26C00948360 /* BezierHandleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6150451F7EC26C00948360 /* BezierHandleProtocol.swift */; };
+		AB6150491F7EC26C00948360 /* BezierCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6150461F7EC26C00948360 /* BezierCurveView.swift */; };
+		AB61504A1F7EC26C00948360 /* BezierHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6150471F7EC26C00948360 /* BezierHandleView.swift */; };
+		AB61504C1F7ECC0800948360 /* AnimationExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */; };
 		AB8D55AA1F79603100C983B4 /* CollapsableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8D55A91F79603100C983B4 /* CollapsableView.swift */; };
 		AB8D55AE1F798E9900C983B4 /* animate-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AD1F798E9900C983B4 /* animate-transform.txt */; };
 		AB8D55B01F799FA200C983B4 /* animate-multi-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */; };
@@ -552,6 +559,13 @@
 		AB6150351F7AF40E00948360 /* property-animator-basics.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-basics.txt"; sourceTree = "<group>"; };
 		AB6150371F7AF63700948360 /* property-animator-states.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-states.txt"; sourceTree = "<group>"; };
 		AB6150391F7C3BC300948360 /* animate-frame.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-frame.txt"; sourceTree = "<group>"; };
+		AB61503B1F7D4D9F00948360 /* property-animator-scrubbing.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-scrubbing.txt"; sourceTree = "<group>"; };
+		AB61503D1F7EB7E700948360 /* property-animator-timing-curves.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-timing-curves.txt"; sourceTree = "<group>"; };
+		AB61503F1F7EB80300948360 /* property-animator-curve-providers.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-curve-providers.txt"; sourceTree = "<group>"; };
+		AB6150451F7EC26C00948360 /* BezierHandleProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierHandleProtocol.swift; sourceTree = "<group>"; };
+		AB6150461F7EC26C00948360 /* BezierCurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierCurveView.swift; sourceTree = "<group>"; };
+		AB6150471F7EC26C00948360 /* BezierHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierHandleView.swift; sourceTree = "<group>"; };
+		AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExampleView.swift; sourceTree = "<group>"; };
 		AB8D55A91F79603100C983B4 /* CollapsableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableView.swift; sourceTree = "<group>"; };
 		AB8D55AD1F798E9900C983B4 /* animate-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-transform.txt"; sourceTree = "<group>"; };
 		AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-multi-transform.txt"; sourceTree = "<group>"; };
@@ -889,6 +903,16 @@
 			path = "Code Samples";
 			sourceTree = "<group>";
 		};
+		AB6150441F7EC21D00948360 /* BezierCurveView */ = {
+			isa = PBXGroup;
+			children = (
+				AB6150461F7EC26C00948360 /* BezierCurveView.swift */,
+				AB6150451F7EC26C00948360 /* BezierHandleProtocol.swift */,
+				AB6150471F7EC26C00948360 /* BezierHandleView.swift */,
+			);
+			path = BezierCurveView;
+			sourceTree = "<group>";
+		};
 		AB8D55B71F79B39700C983B4 /* Block-Based */ = {
 			isa = PBXGroup;
 			children = (
@@ -911,6 +935,9 @@
 				AB6150351F7AF40E00948360 /* property-animator-basics.txt */,
 				AB6150371F7AF63700948360 /* property-animator-states.txt */,
 				AB6150331F7AD89B00948360 /* property-animator-reverse.txt */,
+				AB61503B1F7D4D9F00948360 /* property-animator-scrubbing.txt */,
+				AB61503D1F7EB7E700948360 /* property-animator-timing-curves.txt */,
+				AB61503F1F7EB80300948360 /* property-animator-curve-providers.txt */,
 			);
 			path = "Property Animator";
 			sourceTree = "<group>";
@@ -937,24 +964,16 @@
 				ABE5255B1F759D8B0087D70F /* Modal Animations */,
 				ABE525411F744B640087D70F /* AppDelegate.swift */,
 				ABE525531F744CF30087D70F /* MainViewController.swift */,
-				ABE525551F7597B20087D70F /* Block Animations */,
-				ABE525591F759D730087D70F /* Property Animators */,
-				ABE5255A1F759D7F0087D70F /* Push Animations */,
+				ABE525431F744B640087D70F /* BlockAnimationsViewController.swift */,
+				AB61502F1F7AC7E100948360 /* PropertyAnimatorViewController.swift */,
 				ABE525561F759A360087D70F /* Other Stuff */,
 				AB0CC5211F75A9B10050E486 /* Highlightr */,
+				AB6150441F7EC21D00948360 /* BezierCurveView */,
 				ABE525481F744B640087D70F /* Assets.xcassets */,
 				ABE5254A1F744B640087D70F /* LaunchScreen.storyboard */,
 				ABE5254D1F744B640087D70F /* Info.plist */,
 			);
 			path = "iOS Animation Power Hour";
-			sourceTree = "<group>";
-		};
-		ABE525551F7597B20087D70F /* Block Animations */ = {
-			isa = PBXGroup;
-			children = (
-				ABE525431F744B640087D70F /* BlockAnimationsViewController.swift */,
-			);
-			path = "Block Animations";
 			sourceTree = "<group>";
 		};
 		ABE525561F759A360087D70F /* Other Stuff */ = {
@@ -964,25 +983,11 @@
 				ABE525571F759A610087D70F /* UIButton+Utilities.swift */,
 				AB8D55A91F79603100C983B4 /* CollapsableView.swift */,
 				AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */,
+				AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */,
 				AB0CC72B1F7949B10050E486 /* CodeView.swift */,
 				AB0CC7261F75B1700050E486 /* Code Samples */,
 			);
 			path = "Other Stuff";
-			sourceTree = "<group>";
-		};
-		ABE525591F759D730087D70F /* Property Animators */ = {
-			isa = PBXGroup;
-			children = (
-				AB61502F1F7AC7E100948360 /* PropertyAnimatorViewController.swift */,
-			);
-			path = "Property Animators";
-			sourceTree = "<group>";
-		};
-		ABE5255A1F759D7F0087D70F /* Push Animations */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Push Animations";
 			sourceTree = "<group>";
 		};
 		ABE5255B1F759D8B0087D70F /* Modal Animations */ = {
@@ -1092,6 +1097,7 @@
 				AB0CC6A21F75ABB30050E486 /* dart.min.js in Resources */,
 				AB0CC68C1F75ABB30050E486 /* axapta.min.js in Resources */,
 				AB0CC6FD1F75ABB30050E486 /* roboconf.min.js in Resources */,
+				AB61503C1F7D4D9F00948360 /* property-animator-scrubbing.txt in Resources */,
 				AB0CC64B1F75ABA80050E486 /* color-brewer.min.css in Resources */,
 				AB0CC6B41F75ABB30050E486 /* flix.min.js in Resources */,
 				AB0CC62E1F75ABA80050E486 /* androidstudio.min.css in Resources */,
@@ -1230,6 +1236,7 @@
 				AB0CC6A91F75ABB30050E486 /* dsconfig.min.js in Resources */,
 				AB0CC66A1F75ABA80050E486 /* purebasic.min.css in Resources */,
 				AB8D55B21F79A3E300C983B4 /* animation-options-repeat.txt in Resources */,
+				AB61503E1F7EB7E700948360 /* property-animator-timing-curves.txt in Resources */,
 				AB0CC6631F75ABA80050E486 /* monokai.min.css in Resources */,
 				AB0CC66F1F75ABA80050E486 /* school-book.min.css in Resources */,
 				AB0CC6C11F75ABB30050E486 /* handlebars.min.js in Resources */,
@@ -1262,6 +1269,7 @@
 				AB0CC6831F75ABB30050E486 /* applescript.min.js in Resources */,
 				AB0CC6F71F75ABB30050E486 /* purebasic.min.js in Resources */,
 				AB0CC6471F75ABA80050E486 /* atom-one-light.min.css in Resources */,
+				AB6150401F7EB80300948360 /* property-animator-curve-providers.txt in Resources */,
 				AB0CC6D11F75ABB30050E486 /* less.min.js in Resources */,
 				AB0CC6731F75ABA80050E486 /* sunburst.min.css in Resources */,
 				AB0CC7211F75ABB30050E486 /* xl.min.js in Resources */,
@@ -1334,10 +1342,14 @@
 				AB0CC6281F75AB7C0050E486 /* CodeAttributedString.swift in Sources */,
 				ABE525541F744CF30087D70F /* MainViewController.swift in Sources */,
 				AB6150321F7AC97C00948360 /* UIViewController+Utilities.swift in Sources */,
+				AB61504A1F7EC26C00948360 /* BezierHandleView.swift in Sources */,
 				ABE525441F744B640087D70F /* BlockAnimationsViewController.swift in Sources */,
+				AB6150481F7EC26C00948360 /* BezierHandleProtocol.swift in Sources */,
+				AB6150491F7EC26C00948360 /* BezierCurveView.swift in Sources */,
 				ABE525581F759A610087D70F /* UIButton+Utilities.swift in Sources */,
 				AB0CC72A1F75B44E0050E486 /* DemoSectionView.swift in Sources */,
 				ABE525421F744B640087D70F /* AppDelegate.swift in Sources */,
+				AB61504C1F7ECC0800948360 /* AnimationExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

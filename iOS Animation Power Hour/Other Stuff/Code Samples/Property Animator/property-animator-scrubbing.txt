@@ -1,0 +1,16 @@
+let propertyAnimator = UIViewPropertyAnimator(duration: 5.0, dampingRatio: 0.7, animations: {
+    animatingView.alpha = 0
+    animatingView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+})
+
+// sets the animated properties (alpha and transform) to the
+// values at the end of the animation
+propertyAnimator.fractionComplete = 1
+
+// sets the animated properties (alpha and transform) to the
+// values at the beginning of the animation
+propertyAnimator.fractionComplete = 0
+
+// sets the animated properties (alpha and transform) to the
+// values at the 70% point of the animation
+propertyAnimator.fractionComplete = 0.7
