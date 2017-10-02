@@ -280,6 +280,8 @@
 		AB61504A1F7EC26C00948360 /* BezierHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6150471F7EC26C00948360 /* BezierHandleView.swift */; };
 		AB61504C1F7ECC0800948360 /* AnimationExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */; };
 		AB61504E1F82987800948360 /* property-animator-add.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB61504D1F82987800948360 /* property-animator-add.txt */; };
+		AB6150511F82CDD000948360 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6150501F82CDD000948360 /* ExampleViewController.swift */; };
+		AB6150531F82D2E500948360 /* ExampleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6150521F82D2E500948360 /* ExampleViewCell.swift */; };
 		AB8D55AA1F79603100C983B4 /* CollapsableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8D55A91F79603100C983B4 /* CollapsableView.swift */; };
 		AB8D55AE1F798E9900C983B4 /* animate-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AD1F798E9900C983B4 /* animate-transform.txt */; };
 		AB8D55B01F799FA200C983B4 /* animate-multi-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */; };
@@ -568,6 +570,8 @@
 		AB6150471F7EC26C00948360 /* BezierHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierHandleView.swift; sourceTree = "<group>"; };
 		AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExampleView.swift; sourceTree = "<group>"; };
 		AB61504D1F82987800948360 /* property-animator-add.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-add.txt"; sourceTree = "<group>"; };
+		AB6150501F82CDD000948360 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		AB6150521F82D2E500948360 /* ExampleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewCell.swift; sourceTree = "<group>"; };
 		AB8D55A91F79603100C983B4 /* CollapsableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableView.swift; sourceTree = "<group>"; };
 		AB8D55AD1F798E9900C983B4 /* animate-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-transform.txt"; sourceTree = "<group>"; };
 		AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-multi-transform.txt"; sourceTree = "<group>"; };
@@ -918,6 +922,7 @@
 		AB61504F1F82B46200948360 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB6150521F82D2E500948360 /* ExampleViewCell.swift */,
 				AB0CC72B1F7949B10050E486 /* CodeView.swift */,
 				AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */,
 				AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */,
@@ -980,6 +985,7 @@
 				ABE525531F744CF30087D70F /* MainViewController.swift */,
 				ABE525431F744B640087D70F /* BlockAnimationsViewController.swift */,
 				AB61502F1F7AC7E100948360 /* PropertyAnimatorViewController.swift */,
+				AB6150501F82CDD000948360 /* ExampleViewController.swift */,
 				AB61504F1F82B46200948360 /* Custom Views */,
 				ABE525561F759A360087D70F /* Utilities */,
 				AB0CC5211F75A9B10050E486 /* Highlightr */,
@@ -1353,6 +1359,7 @@
 				AB8D55AA1F79603100C983B4 /* CollapsableView.swift in Sources */,
 				AB0CC6281F75AB7C0050E486 /* CodeAttributedString.swift in Sources */,
 				ABE525541F744CF30087D70F /* MainViewController.swift in Sources */,
+				AB6150531F82D2E500948360 /* ExampleViewCell.swift in Sources */,
 				AB6150321F7AC97C00948360 /* UIViewController+Utilities.swift in Sources */,
 				AB61504A1F7EC26C00948360 /* BezierHandleView.swift in Sources */,
 				ABE525441F744B640087D70F /* BlockAnimationsViewController.swift in Sources */,
@@ -1362,6 +1369,7 @@
 				AB0CC72A1F75B44E0050E486 /* DemoSectionView.swift in Sources */,
 				ABE525421F744B640087D70F /* AppDelegate.swift in Sources */,
 				AB61504C1F7ECC0800948360 /* AnimationExampleView.swift in Sources */,
+				AB6150511F82CDD000948360 /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
