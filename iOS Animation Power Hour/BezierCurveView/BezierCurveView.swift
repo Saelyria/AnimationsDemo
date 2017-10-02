@@ -66,6 +66,26 @@ public class BezierCurveView: UIView {
         super.init(coder: aDecoder)
         contentMode = .redraw
     }
+    
+    func setup(withControlPoint1 controlPoint1: CGPoint, controlPoint2: CGPoint) {
+        for subview in self.subviews {
+            subview.removeFromSuperview()
+        }
+        
+        let handleView1 = BezierHandleView(frame: self.bounds)
+        handleView1.backgroundColor = UIColor.clear
+        handleView1.controlPoint = controlPoint1
+        //handleView1.anchor = CGPoint(x: self.frame.maxY, y: self.frame.minX)
+        self.addSubview(handleView1)
+        
+        let handleView2 = BezierHandleView(frame: self.bounds)
+        handleView2.backgroundColor = UIColor.clear
+        handleView2.controlPoint = controlPoint2
+        //handleView2.anchor = CGPoint(x: self.frame.minY, y: self.frame.maxX)
+        self.addSubview(handleView2)
+        
+        self.setNeedsDisplay()
+    }
 
     public override func draw(_ rect: CGRect) {
         if let context = UIGraphicsGetCurrentContext() {
@@ -152,7 +172,7 @@ public class BezierCurveView: UIView {
         case .arrowHead:
             // Connect the arrowhead to the shaft
             let θ = radAngle(o:o, m:m)
-            let π = CGFloat(M_PI)
+            let π = CGFloat(Double.pi)
             let origin = polarToCartesian(o: o, r: -size, θ: θ + π)
             let shaft = polarToCartesian(o: origin, r: size/2, θ: θ + π)
             context.move(to: origin)
@@ -186,7 +206,7 @@ public class BezierCurveView: UIView {
             fallthrough
         case .disc:
             let θ = radAngle(o:o, m:m)
-            let π = CGFloat(M_PI)
+            let π = CGFloat(Double.pi)
             let origin = polarToCartesian(o: o, r: -size, θ: θ + π)
             context.addEllipse(in: CGRect(x: o.x - size,
                                           y: o.y - size,

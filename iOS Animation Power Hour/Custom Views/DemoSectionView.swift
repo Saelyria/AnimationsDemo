@@ -3,7 +3,11 @@ import UIKit
 
 // MARK: - Actions
 
-class DemoSectionViewButtonAction {
+protocol DemoSectionViewAction {
+    func callAction()
+}
+
+class DemoSectionViewButtonAction: DemoSectionViewAction {
     let buttonTitle: String
     let actionBlock: () -> Void
     let shouldStartEnabled: Bool
@@ -19,9 +23,13 @@ class DemoSectionViewButtonAction {
         self.actionBlock = actionBlock
         self.shouldStartEnabled = startsEnabled
     }
+    
+    func callAction() {
+        self.actionBlock()
+    }
 }
 
-class DemoSectionViewSliderAction {
+class DemoSectionViewSliderAction: DemoSectionViewAction {
     let actionBlock: (Float) -> Void
     var slider: UISlider? {
         didSet {
@@ -32,57 +40,24 @@ class DemoSectionViewSliderAction {
     init(actionBlock: @escaping (Float) -> Void) {
         self.actionBlock = actionBlock
     }
+    
+    func callAction() {
+        if let slider = self.slider {
+            self.actionBlock(slider.value)
+        }
+    }
 }
 
 // MARK: - DemoSectionView
 
 class DemoSectionView: CollapsableView {
     private var sampleCodeView: CodeView!
-    private var animatingView: UIView?
+    private var animationExampleView: AnimationExampleView!
     private var animationClosure: (() -> Void)?
     private var actionStackView: UIStackView!
-    private var buttonActions: [UIButton : DemoSectionViewButtonAction]?
-    private var sliderAction: DemoSectionViewSliderAction?
+    private var actions = [UIControl: DemoSectionViewAction]()
     
-    convenience init(title: String, description: String, sampleCode: String, animatingView: UIView, buttonActions: [DemoSectionViewButtonAction]) {
-        let (contentView, codeView, actionStackView) = DemoSectionView.createContentView(description: description, sampleCode: sampleCode, animatingView: animatingView)
-        
-        self.init(title: title, contentView: contentView)
-        self.animatingView = animatingView
-        self.actionStackView = actionStackView
-        self.sampleCodeView = codeView
-        self.buttonActions = [UIButton: DemoSectionViewButtonAction]()
-        
-        for action in buttonActions {
-            let button = UIButton(type: .system)
-            button.setupWithOutline()
-            action.button = button
-            NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 40).isActive = true
-            NSLayoutConstraint(item: button, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .height, multiplier: 1, constant: 90).isActive = true
-            actionStackView.addArrangedSubview(button)
-            self.buttonActions![button] = action
-            button.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
-        }
-    }
-    
-    convenience init(title: String, description: String, sampleCode: String, animatingView: UIView, sliderAction: DemoSectionViewSliderAction) {
-        let (contentView, codeView, actionStackView) = DemoSectionView.createContentView(description: description, sampleCode: sampleCode, animatingView: animatingView)
-        
-        self.init(title: title, contentView: contentView)
-        self.animatingView = animatingView
-        self.actionStackView = actionStackView
-        self.sampleCodeView = codeView
-        
-        let slider = UISlider()
-        slider.addTarget(self, action: #selector(onSliderValueChanged(slider:)), for: .valueChanged)
-        slider.translatesAutoresizingMaskIntoConstraints = false
-        sliderAction.slider = slider
-        NSLayoutConstraint(item: slider, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 180).isActive = true
-        actionStackView.addArrangedSubview(slider)
-        self.sliderAction = sliderAction
-    }
-    
-    private class func createContentView(description: String, sampleCode: String, animatingView: UIView) -> (contentView: UIView, codeView: CodeView, actionStackView: UIStackView) {
+    required init(title: String, description: String, sampleCode: String, animationExampleView: AnimationExampleView, actions: [DemoSectionViewAction]) {
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -100,17 +75,8 @@ class DemoSectionView: CollapsableView {
         animatingViewSectionTitle.font = UIFont.systemFont(ofSize: 23, weight: .bold)
         contentView.addSubview(animatingViewSectionTitle)
         
-        let animatingViewSection = UIView()
-        animatingViewSection.clipsToBounds = true
-        animatingViewSection.translatesAutoresizingMaskIntoConstraints = false
-        animatingViewSection.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
-        animatingViewSection.layer.cornerRadius = 8
-        contentView.addSubview(animatingViewSection)
-        
-        animatingView.translatesAutoresizingMaskIntoConstraints = false
-        animatingViewSection.addSubview(animatingView)
-        NSLayoutConstraint(item: animatingView, attribute: .centerX, relatedBy: .equal, toItem: animatingViewSection, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: animatingView, attribute: .centerY, relatedBy: .equal, toItem: animatingViewSection, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+        animationExampleView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(animationExampleView)
         
         let actionsStackView = UIStackView()
         actionsStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -134,16 +100,49 @@ class DemoSectionView: CollapsableView {
         sampleCodeView.clipsToBounds = true
         contentView.addSubview(sampleCodeView)
         
-        let views = ["desc":descriptionLabel, "animTitle":animatingViewSectionTitle, "animView":animatingViewSection, "actions":actionsStackView, "codeTitle":codeSectionTitle, "code":sampleCodeView]
+        let views = ["desc":descriptionLabel, "animTitle":animatingViewSectionTitle, "animView":animationExampleView, "actions":actionsStackView, "codeTitle":codeSectionTitle, "code":sampleCodeView]
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10@999-[desc]-35-[animTitle]-10-[animView(200)]-15-[actions]-35-[codeTitle]-10-[code]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[desc]-25-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[animTitle]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[animView]-25-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        //NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[actions]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[codeTitle]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[code]-25-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         
-        return (contentView, sampleCodeView, actionsStackView)
+        super.init(title: title, contentView: contentView)
+        self.animationExampleView = animationExampleView
+        self.actionStackView = actionsStackView
+        self.sampleCodeView = sampleCodeView
+        
+        for action in actions {
+            if let buttonAction = action as? DemoSectionViewButtonAction {
+                let button = UIButton(type: .system)
+                button.setupWithOutline()
+                buttonAction.button = button
+                NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 40).isActive = true
+                NSLayoutConstraint(item: button, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .height, multiplier: 1, constant: 90).isActive = true
+                actionStackView.addArrangedSubview(button)
+                self.actions[button] = action
+                button.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+            }
+            
+            else if let sliderAction = action as? DemoSectionViewSliderAction {
+                let slider = UISlider()
+                slider.translatesAutoresizingMaskIntoConstraints = false
+                sliderAction.slider = slider
+                NSLayoutConstraint(item: slider, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 180).isActive = true
+                actionStackView.addArrangedSubview(slider)
+                self.actions[slider] = sliderAction
+                slider.addTarget(self, action: #selector(onSliderValueChanged(slider:)), for: .valueChanged)
+            }
+        }
+    }
+    
+    required init(title: String, contentView: UIView, startsCollapsed: Bool) {
+        fatalError("init(title:contentView:startsCollapsed:) has not been implemented")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private class func attributedStringWithMonospace(inText text: String) -> NSAttributedString {
@@ -171,12 +170,14 @@ class DemoSectionView: CollapsableView {
     }
     
     @objc func onSliderValueChanged(slider: UISlider) {
-        self.sliderAction?.actionBlock(slider.value)
+        if let action = self.actions[slider] {
+            action.callAction()
+        }
     }
     
     @objc func buttonPressed(_ button: UIButton) {
-        if let action = self.buttonActions?[button] {
-            action.actionBlock()
+        if let action = self.actions[button] {
+            action.callAction()
         }
     }
 }

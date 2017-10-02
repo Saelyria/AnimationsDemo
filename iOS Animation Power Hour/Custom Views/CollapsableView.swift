@@ -1,6 +1,8 @@
 
 import UIKit
 
+/// A view with a title and a collapse arrow button on the right. When this button is toggled, it
+/// will slide out its `contentView` below it.
 class CollapsableView: UIView {
     private(set) var isCollapsed: Bool = true {
         didSet {
@@ -17,8 +19,8 @@ class CollapsableView: UIView {
     private let collapseButton = UIButton(type: .system)
     private var contentView: UIView!
     
-    convenience init(title: String, contentView: UIView, startsCollapsed: Bool = true) {
-        self.init(frame: CGRect.zero)
+    required init(title: String, contentView: UIView, startsCollapsed: Bool = true) {
+        super.init(frame: CGRect.zero)
         
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -65,6 +67,10 @@ class CollapsableView: UIView {
         self.isCollapsed = startsCollapsed
         self.contentView.isHidden = self.isCollapsed
         self.collapseButton.transform = (self.isCollapsed) ? CGAffineTransform.identity : CGAffineTransform(rotationAngle: CGFloat.pi)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     @objc func collapseButtonPressed() {

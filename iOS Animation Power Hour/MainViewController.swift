@@ -4,25 +4,26 @@ import UIKit
 class MainViewController: UIViewController {
     let blockAnimationsButton = UIButton(type: .system)
     let propertyAnimatorButton = UIButton(type: .system)
-    let pushAnimationButton = UIButton(type: .system)
-    let modalAnimationsButton = UIButton(type: .system)
+    let defaultTransitionsButton = UIButton(type: .system)
+    let customTransitionsButton = UIButton(type: .system)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Samples"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        }
         self.blockAnimationsButton.setTitle("Block-Based Animations", for: .normal)
         self.blockAnimationsButton.addTarget(self, action: #selector(basicAnimationsPressed), for: .touchUpInside)
         self.propertyAnimatorButton.setTitle("Animations with a Property Animator", for: .normal)
         self.propertyAnimatorButton.addTarget(self, action: #selector(propertyAnimatorPressed), for: .touchUpInside)
-        self.pushAnimationButton.setTitle("Push Animation", for: .normal)
-        self.pushAnimationButton.addTarget(self, action: #selector(pushAnimationPressed), for: .touchUpInside)
-        self.modalAnimationsButton.setTitle("Modal Animations", for: .normal)
-        self.modalAnimationsButton.addTarget(self, action: #selector(modalAnimationsPressed), for: .touchUpInside)
+        self.defaultTransitionsButton.setTitle("Built-in Transitions", for: .normal)
+        self.defaultTransitionsButton.addTarget(self, action: #selector(defaultTransitionsPressed), for: .touchUpInside)
+        self.customTransitionsButton.setTitle("Custom Transitions", for: .normal)
+        self.customTransitionsButton.addTarget(self, action: #selector(customTransitionsPressed), for: .touchUpInside)
         
-        let buttons = [ self.blockAnimationsButton, self.propertyAnimatorButton, self.pushAnimationButton, self.modalAnimationsButton ]
+        let buttons = [ self.blockAnimationsButton, self.propertyAnimatorButton, self.defaultTransitionsButton, self.customTransitionsButton ]
         buttons.forEach { button in self.setupStyleOnButton(button) }
 
         let stackView = UIStackView(arrangedSubviews: buttons)
@@ -31,9 +32,15 @@ class MainViewController: UIViewController {
         stackView.alignment = .center
         stackView.axis = .vertical
         self.view.addSubview(stackView)
-        NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 30).isActive = true
-        NSLayoutConstraint(item: stackView, attribute: .left, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .left, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: stackView, attribute: .right, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        if #available(iOS 11.0, *) {
+            NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 30).isActive = true
+            NSLayoutConstraint(item: stackView, attribute: .left, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .left, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: stackView, attribute: .right, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        } else {
+            NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 30).isActive = true
+            NSLayoutConstraint(item: stackView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: stackView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        }
     }
     
     func setupStyleOnButton(_ button: UIButton) {
@@ -53,11 +60,11 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(propertyAnimatorVC, animated: true)
     }
     
-    @objc func pushAnimationPressed() {
+    @objc func defaultTransitionsPressed() {
         
     }
     
-    @objc func modalAnimationsPressed() {
+    @objc func customTransitionsPressed() {
         
     }
 }

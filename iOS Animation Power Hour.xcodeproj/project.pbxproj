@@ -279,6 +279,7 @@
 		AB6150491F7EC26C00948360 /* BezierCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6150461F7EC26C00948360 /* BezierCurveView.swift */; };
 		AB61504A1F7EC26C00948360 /* BezierHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6150471F7EC26C00948360 /* BezierHandleView.swift */; };
 		AB61504C1F7ECC0800948360 /* AnimationExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */; };
+		AB61504E1F82987800948360 /* property-animator-add.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB61504D1F82987800948360 /* property-animator-add.txt */; };
 		AB8D55AA1F79603100C983B4 /* CollapsableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8D55A91F79603100C983B4 /* CollapsableView.swift */; };
 		AB8D55AE1F798E9900C983B4 /* animate-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AD1F798E9900C983B4 /* animate-transform.txt */; };
 		AB8D55B01F799FA200C983B4 /* animate-multi-transform.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */; };
@@ -566,6 +567,7 @@
 		AB6150461F7EC26C00948360 /* BezierCurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierCurveView.swift; sourceTree = "<group>"; };
 		AB6150471F7EC26C00948360 /* BezierHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierHandleView.swift; sourceTree = "<group>"; };
 		AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExampleView.swift; sourceTree = "<group>"; };
+		AB61504D1F82987800948360 /* property-animator-add.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "property-animator-add.txt"; sourceTree = "<group>"; };
 		AB8D55A91F79603100C983B4 /* CollapsableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableView.swift; sourceTree = "<group>"; };
 		AB8D55AD1F798E9900C983B4 /* animate-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-transform.txt"; sourceTree = "<group>"; };
 		AB8D55AF1F799FA200C983B4 /* animate-multi-transform.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-multi-transform.txt"; sourceTree = "<group>"; };
@@ -913,6 +915,17 @@
 			path = BezierCurveView;
 			sourceTree = "<group>";
 		};
+		AB61504F1F82B46200948360 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB0CC72B1F7949B10050E486 /* CodeView.swift */,
+				AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */,
+				AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */,
+				AB8D55A91F79603100C983B4 /* CollapsableView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 		AB8D55B71F79B39700C983B4 /* Block-Based */ = {
 			isa = PBXGroup;
 			children = (
@@ -936,6 +949,7 @@
 				AB6150371F7AF63700948360 /* property-animator-states.txt */,
 				AB6150331F7AD89B00948360 /* property-animator-reverse.txt */,
 				AB61503B1F7D4D9F00948360 /* property-animator-scrubbing.txt */,
+				AB61504D1F82987800948360 /* property-animator-add.txt */,
 				AB61503D1F7EB7E700948360 /* property-animator-timing-curves.txt */,
 				AB61503F1F7EB80300948360 /* property-animator-curve-providers.txt */,
 			);
@@ -966,7 +980,8 @@
 				ABE525531F744CF30087D70F /* MainViewController.swift */,
 				ABE525431F744B640087D70F /* BlockAnimationsViewController.swift */,
 				AB61502F1F7AC7E100948360 /* PropertyAnimatorViewController.swift */,
-				ABE525561F759A360087D70F /* Other Stuff */,
+				AB61504F1F82B46200948360 /* Custom Views */,
+				ABE525561F759A360087D70F /* Utilities */,
 				AB0CC5211F75A9B10050E486 /* Highlightr */,
 				AB6150441F7EC21D00948360 /* BezierCurveView */,
 				ABE525481F744B640087D70F /* Assets.xcassets */,
@@ -976,18 +991,14 @@
 			path = "iOS Animation Power Hour";
 			sourceTree = "<group>";
 		};
-		ABE525561F759A360087D70F /* Other Stuff */ = {
+		ABE525561F759A360087D70F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				AB6150311F7AC97C00948360 /* UIViewController+Utilities.swift */,
 				ABE525571F759A610087D70F /* UIButton+Utilities.swift */,
-				AB8D55A91F79603100C983B4 /* CollapsableView.swift */,
-				AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */,
-				AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */,
-				AB0CC72B1F7949B10050E486 /* CodeView.swift */,
 				AB0CC7261F75B1700050E486 /* Code Samples */,
 			);
-			path = "Other Stuff";
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		ABE5255B1F759D8B0087D70F /* Modal Animations */ = {
@@ -1194,6 +1205,7 @@
 				AB0CC7241F75ABB30050E486 /* yaml.min.js in Resources */,
 				AB0CC70B1F75ABB30050E486 /* stan.min.js in Resources */,
 				AB0CC6A41F75ABB30050E486 /* diff.min.js in Resources */,
+				AB61504E1F82987800948360 /* property-animator-add.txt in Resources */,
 				AB0CC63E1F75ABA80050E486 /* atelier-plateau-dark.min.css in Resources */,
 				AB0CC6D01F75ABB30050E486 /* ldif.min.js in Resources */,
 				AB0CC6B61F75ABB30050E486 /* fsharp.min.js in Resources */,
@@ -1483,6 +1495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HE8Y2NA5B5;
 				INFOPLIST_FILE = "iOS Animation Power Hour/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AaronBosnjak.iOS-Animation-Power-Hour";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1498,6 +1511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HE8Y2NA5B5;
 				INFOPLIST_FILE = "iOS Animation Power Hour/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AaronBosnjak.iOS-Animation-Power-Hour";
 				PRODUCT_NAME = "$(TARGET_NAME)";

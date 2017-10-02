@@ -1,0 +1,7 @@
+let timingParameters = UISpringTimingParameters(dampingRatio: 4.0, initialVelocity: CGVector(dx: 1, dy: 1))
+
+let propertyAnimator = UIViewPropertyAnimator(duration: 2.0, timingParameters: timingParameters)
+    propertyAnimator.addAnimations {
+    square.alpha = 0
+    square.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+}

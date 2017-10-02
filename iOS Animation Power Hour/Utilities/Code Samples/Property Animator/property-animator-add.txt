@@ -1,0 +1,12 @@
+let propertyAnimator = UIViewPropertyAnimator(duration: 10.0, dampingRatio: 0.7, animations: {
+    square.transform = CGAffineTransform(translationX: 100, y: 0)
+})
+propertyAnimator.startAnimation()
+
+propertyAnimator.addAnimations({
+    square.alpha = 0
+})
+
+propertyAnimator.addAnimations({
+    square.backgroundColor = UIColor.blue
+})
