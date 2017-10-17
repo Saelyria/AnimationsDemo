@@ -1,0 +1,5 @@
+let newViewController = UIViewController()
+newViewController = .coverVertical
+
+// self is the previous view controller
+self.present(newViewController, animated: true, completion: nil)

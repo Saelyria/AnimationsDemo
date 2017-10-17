@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93532BC31F83209E0030BE96 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93532BC21F83209E0030BE96 /* UIColor+Theme.swift */; };
+		93532BC51F8327560030BE96 /* AutoLayoutScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93532BC41F8327560030BE96 /* AutoLayoutScrollView.swift */; };
+		93532BC71F84336A0030BE96 /* ButtonToNavigationBarAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93532BC61F84336A0030BE96 /* ButtonToNavigationBarAnimationController.swift */; };
+		93532BC91F8434060030BE96 /* ImageExpandAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93532BC81F8434060030BE96 /* ImageExpandAnimationController.swift */; };
+		93591E111F927A3500A22F16 /* BuiltInTransitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93591E101F927A3500A22F16 /* BuiltInTransitionsViewController.swift */; };
+		93591E131F92857200A22F16 /* ExampleTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93591E121F92857200A22F16 /* ExampleTransitionViewController.swift */; };
+		93591E151F92B75B00A22F16 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93591E141F92B75B00A22F16 /* Storyboard.storyboard */; };
+		93B11E7E1F957E6E00F1F147 /* cover-vertical.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93B11E7D1F957E6E00F1F147 /* cover-vertical.txt */; };
+		93B11E801F957E9400F1F147 /* push.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93B11E7F1F957E9400F1F147 /* push.txt */; };
+		93B11E821F957EDD00F1F147 /* cross-dissolve.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93B11E811F957EDD00F1F147 /* cross-dissolve.txt */; };
+		93B11E841F957EFF00F1F147 /* flip-horizontal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93B11E831F957EFF00F1F147 /* flip-horizontal.txt */; };
+		93B11E861F957F1A00F1F147 /* partial-curl.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93B11E851F957F1A00F1F147 /* partial-curl.txt */; };
 		AB0CC6281F75AB7C0050E486 /* CodeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CC5241F75AA140050E486 /* CodeAttributedString.swift */; };
 		AB0CC6291F75AB7E0050E486 /* Highlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CC5251F75AA140050E486 /* Highlightr.swift */; };
 		AB0CC62A1F75AB7F0050E486 /* HTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CC5261F75AA140050E486 /* HTMLUtils.swift */; };
@@ -262,7 +274,6 @@
 		AB0CC7241F75ABB30050E486 /* yaml.min.js in Resources */ = {isa = PBXBuildFile; fileRef = AB0CC5D41F75AA140050E486 /* yaml.min.js */; };
 		AB0CC7251F75ABB30050E486 /* zephir.min.js in Resources */ = {isa = PBXBuildFile; fileRef = AB0CC5D51F75AA140050E486 /* zephir.min.js */; };
 		AB0CC7281F75B1A20050E486 /* animate-alpha.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB0CC7271F75B1A20050E486 /* animate-alpha.txt */; };
-		AB0CC72A1F75B44E0050E486 /* DemoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */; };
 		AB0CC72C1F7949B10050E486 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CC72B1F7949B10050E486 /* CodeView.swift */; };
 		AB6150281F7AA42A00948360 /* animation-spring.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6150271F7AA42A00948360 /* animation-spring.txt */; };
 		AB61502E1F7AAE1800948360 /* animation-spring-velocity.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB61502D1F7AAE1800948360 /* animation-spring-velocity.txt */; };
@@ -297,6 +308,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93532BC21F83209E0030BE96 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
+		93532BC41F8327560030BE96 /* AutoLayoutScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutScrollView.swift; sourceTree = "<group>"; };
+		93532BC61F84336A0030BE96 /* ButtonToNavigationBarAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonToNavigationBarAnimationController.swift; path = "iOS Animation Power Hour/Utilities/ButtonToNavigationBarAnimationController.swift"; sourceTree = SOURCE_ROOT; };
+		93532BC81F8434060030BE96 /* ImageExpandAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageExpandAnimationController.swift; path = "iOS Animation Power Hour/Utilities/ImageExpandAnimationController.swift"; sourceTree = SOURCE_ROOT; };
+		93591E101F927A3500A22F16 /* BuiltInTransitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInTransitionsViewController.swift; sourceTree = "<group>"; };
+		93591E121F92857200A22F16 /* ExampleTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTransitionViewController.swift; sourceTree = "<group>"; };
+		93591E141F92B75B00A22F16 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		93B11E7D1F957E6E00F1F147 /* cover-vertical.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "cover-vertical.txt"; sourceTree = "<group>"; };
+		93B11E7F1F957E9400F1F147 /* push.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = push.txt; sourceTree = "<group>"; };
+		93B11E811F957EDD00F1F147 /* cross-dissolve.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "cross-dissolve.txt"; sourceTree = "<group>"; };
+		93B11E831F957EFF00F1F147 /* flip-horizontal.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "flip-horizontal.txt"; sourceTree = "<group>"; };
+		93B11E851F957F1A00F1F147 /* partial-curl.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "partial-curl.txt"; sourceTree = "<group>"; };
 		AB0CC5241F75AA140050E486 /* CodeAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeAttributedString.swift; sourceTree = "<group>"; };
 		AB0CC5251F75AA140050E486 /* Highlightr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlightr.swift; sourceTree = "<group>"; };
 		AB0CC5261F75AA140050E486 /* HTMLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLUtils.swift; sourceTree = "<group>"; };
@@ -552,7 +575,6 @@
 		AB0CC6261F75AA140050E486 /* xt256.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = xt256.min.css; sourceTree = "<group>"; };
 		AB0CC6271F75AA140050E486 /* zenburn.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = zenburn.min.css; sourceTree = "<group>"; };
 		AB0CC7271F75B1A20050E486 /* animate-alpha.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animate-alpha.txt"; sourceTree = "<group>"; };
-		AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSectionView.swift; sourceTree = "<group>"; };
 		AB0CC72B1F7949B10050E486 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		AB6150271F7AA42A00948360 /* animation-spring.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animation-spring.txt"; sourceTree = "<group>"; };
 		AB61502D1F7AAE1800948360 /* animation-spring-velocity.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "animation-spring-velocity.txt"; sourceTree = "<group>"; };
@@ -599,6 +621,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93B11E7C1F957E3900F1F147 /* Built-In Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				93B11E7F1F957E9400F1F147 /* push.txt */,
+				93B11E7D1F957E6E00F1F147 /* cover-vertical.txt */,
+				93B11E811F957EDD00F1F147 /* cross-dissolve.txt */,
+				93B11E831F957EFF00F1F147 /* flip-horizontal.txt */,
+				93B11E851F957F1A00F1F147 /* partial-curl.txt */,
+			);
+			path = "Built-In Transitions";
+			sourceTree = "<group>";
+		};
 		AB0CC5211F75A9B10050E486 /* Highlightr */ = {
 			isa = PBXGroup;
 			children = (
@@ -905,6 +939,7 @@
 			children = (
 				AB8D55B71F79B39700C983B4 /* Block-Based */,
 				AB8D55B81F79B3B300C983B4 /* Property Animator */,
+				93B11E7C1F957E3900F1F147 /* Built-In Transitions */,
 			);
 			path = "Code Samples";
 			sourceTree = "<group>";
@@ -919,16 +954,15 @@
 			path = BezierCurveView;
 			sourceTree = "<group>";
 		};
-		AB61504F1F82B46200948360 /* Custom Views */ = {
+		AB61504F1F82B46200948360 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				AB6150521F82D2E500948360 /* ExampleViewCell.swift */,
 				AB0CC72B1F7949B10050E486 /* CodeView.swift */,
 				AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */,
-				AB0CC7291F75B44E0050E486 /* DemoSectionView.swift */,
 				AB8D55A91F79603100C983B4 /* CollapsableView.swift */,
 			);
-			path = "Custom Views";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AB8D55B71F79B39700C983B4 /* Block-Based */ = {
@@ -985,12 +1019,16 @@
 				ABE525531F744CF30087D70F /* MainViewController.swift */,
 				ABE525431F744B640087D70F /* BlockAnimationsViewController.swift */,
 				AB61502F1F7AC7E100948360 /* PropertyAnimatorViewController.swift */,
+				93591E101F927A3500A22F16 /* BuiltInTransitionsViewController.swift */,
 				AB6150501F82CDD000948360 /* ExampleViewController.swift */,
-				AB61504F1F82B46200948360 /* Custom Views */,
+				93591E121F92857200A22F16 /* ExampleTransitionViewController.swift */,
+				AB61504F1F82B46200948360 /* Views */,
+				AB0CC7261F75B1700050E486 /* Code Samples */,
 				ABE525561F759A360087D70F /* Utilities */,
 				AB0CC5211F75A9B10050E486 /* Highlightr */,
 				AB6150441F7EC21D00948360 /* BezierCurveView */,
 				ABE525481F744B640087D70F /* Assets.xcassets */,
+				93591E141F92B75B00A22F16 /* Storyboard.storyboard */,
 				ABE5254A1F744B640087D70F /* LaunchScreen.storyboard */,
 				ABE5254D1F744B640087D70F /* Info.plist */,
 			);
@@ -1002,7 +1040,8 @@
 			children = (
 				AB6150311F7AC97C00948360 /* UIViewController+Utilities.swift */,
 				ABE525571F759A610087D70F /* UIButton+Utilities.swift */,
-				AB0CC7261F75B1700050E486 /* Code Samples */,
+				93532BC21F83209E0030BE96 /* UIColor+Theme.swift */,
+				93532BC41F8327560030BE96 /* AutoLayoutScrollView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1010,6 +1049,8 @@
 		ABE5255B1F759D8B0087D70F /* Modal Animations */ = {
 			isa = PBXGroup;
 			children = (
+				93532BC61F84336A0030BE96 /* ButtonToNavigationBarAnimationController.swift */,
+				93532BC81F8434060030BE96 /* ImageExpandAnimationController.swift */,
 			);
 			path = "Modal Animations";
 			sourceTree = "<group>";
@@ -1141,6 +1182,7 @@
 				AB0CC6411F75ABA80050E486 /* atelier-savanna-light.min.css in Resources */,
 				AB0CC6651F75ABA80050E486 /* ocean.min.css in Resources */,
 				AB0CC6F91F75ABB30050E486 /* q.min.js in Resources */,
+				93B11E801F957E9400F1F147 /* push.txt in Resources */,
 				AB0CC65C1F75ABA80050E486 /* idea.min.css in Resources */,
 				AB6150361F7AF40E00948360 /* property-animator-basics.txt in Resources */,
 				AB0CC7061F75ABB30050E486 /* smali.min.js in Resources */,
@@ -1245,6 +1287,7 @@
 				AB0CC6761F75ABA80050E486 /* tomorrow-night-eighties.min.css in Resources */,
 				AB0CC71B1F75ABB30050E486 /* vbscript-html.min.js in Resources */,
 				AB0CC7231F75ABB30050E486 /* xquery.min.js in Resources */,
+				93591E151F92B75B00A22F16 /* Storyboard.storyboard in Resources */,
 				AB0CC70D1F75ABB30050E486 /* step21.min.js in Resources */,
 				AB0CC67A1F75ABA80050E486 /* xcode.min.css in Resources */,
 				AB0CC6C01F75ABB30050E486 /* haml.min.js in Resources */,
@@ -1264,6 +1307,7 @@
 				AB0CC6DE1F75ABB30050E486 /* mercury.min.js in Resources */,
 				AB0CC62F1F75ABA80050E486 /* arduino-light.min.css in Resources */,
 				AB0CC6F31F75ABB30050E486 /* profile.min.js in Resources */,
+				93B11E7E1F957E6E00F1F147 /* cover-vertical.txt in Resources */,
 				AB0CC7031F75ABB30050E486 /* scheme.min.js in Resources */,
 				AB0CC69B1F75ABB30050E486 /* cpp.min.js in Resources */,
 				AB0CC67B1F75ABA80050E486 /* xt256.min.css in Resources */,
@@ -1279,6 +1323,7 @@
 				AB0CC6EA1F75ABB30050E486 /* openscad.min.js in Resources */,
 				AB0CC7121F75ABB30050E486 /* tap.min.js in Resources */,
 				AB0CC6EC1F75ABB30050E486 /* parser3.min.js in Resources */,
+				93B11E841F957EFF00F1F147 /* flip-horizontal.txt in Resources */,
 				AB0CC6351F75ABA80050E486 /* atelier-dune-light.min.css in Resources */,
 				AB0CC6361F75ABA80050E486 /* atelier-estuary-dark.min.css in Resources */,
 				ABE5254C1F744B640087D70F /* LaunchScreen.storyboard in Resources */,
@@ -1299,6 +1344,7 @@
 				AB0CC68D1F75ABB30050E486 /* bash.min.js in Resources */,
 				AB0CC6901F75ABB30050E486 /* brainfuck.min.js in Resources */,
 				AB0CC6D71F75ABB30050E486 /* lua.min.js in Resources */,
+				93B11E861F957F1A00F1F147 /* partial-curl.txt in Resources */,
 				AB0CC6C21F75ABB30050E486 /* haskell.min.js in Resources */,
 				AB0CC71C1F75ABB30050E486 /* vbscript.min.js in Resources */,
 				AB0CC6BA1F75ABB30050E486 /* gherkin.min.js in Resources */,
@@ -1326,6 +1372,7 @@
 				AB0CC63C1F75ABA80050E486 /* atelier-lakeside-dark.min.css in Resources */,
 				AB0CC7021F75ABB30050E486 /* scala.min.js in Resources */,
 				AB6150381F7AF63700948360 /* property-animator-states.txt in Resources */,
+				93B11E821F957EDD00F1F147 /* cross-dissolve.txt in Resources */,
 				AB0CC6DA1F75ABB30050E486 /* mathematica.min.js in Resources */,
 				AB0CC6DB1F75ABB30050E486 /* matlab.min.js in Resources */,
 				ABE525491F744B640087D70F /* Assets.xcassets in Resources */,
@@ -1356,20 +1403,25 @@
 				AB6150301F7AC7E100948360 /* PropertyAnimatorViewController.swift in Sources */,
 				AB0CC6291F75AB7E0050E486 /* Highlightr.swift in Sources */,
 				AB0CC72C1F7949B10050E486 /* CodeView.swift in Sources */,
+				93532BC31F83209E0030BE96 /* UIColor+Theme.swift in Sources */,
+				93591E131F92857200A22F16 /* ExampleTransitionViewController.swift in Sources */,
+				93532BC91F8434060030BE96 /* ImageExpandAnimationController.swift in Sources */,
+				93532BC71F84336A0030BE96 /* ButtonToNavigationBarAnimationController.swift in Sources */,
 				AB8D55AA1F79603100C983B4 /* CollapsableView.swift in Sources */,
 				AB0CC6281F75AB7C0050E486 /* CodeAttributedString.swift in Sources */,
 				ABE525541F744CF30087D70F /* MainViewController.swift in Sources */,
 				AB6150531F82D2E500948360 /* ExampleViewCell.swift in Sources */,
+				93591E111F927A3500A22F16 /* BuiltInTransitionsViewController.swift in Sources */,
 				AB6150321F7AC97C00948360 /* UIViewController+Utilities.swift in Sources */,
 				AB61504A1F7EC26C00948360 /* BezierHandleView.swift in Sources */,
 				ABE525441F744B640087D70F /* BlockAnimationsViewController.swift in Sources */,
 				AB6150481F7EC26C00948360 /* BezierHandleProtocol.swift in Sources */,
 				AB6150491F7EC26C00948360 /* BezierCurveView.swift in Sources */,
 				ABE525581F759A610087D70F /* UIButton+Utilities.swift in Sources */,
-				AB0CC72A1F75B44E0050E486 /* DemoSectionView.swift in Sources */,
 				ABE525421F744B640087D70F /* AppDelegate.swift in Sources */,
 				AB61504C1F7ECC0800948360 /* AnimationExampleView.swift in Sources */,
 				AB6150511F82CDD000948360 /* ExampleViewController.swift in Sources */,
+				93532BC51F8327560030BE96 /* AutoLayoutScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1508,7 +1560,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "AaronBosnjak.iOS-Animation-Power-Hour";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -1524,7 +1576,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "AaronBosnjak.iOS-Animation-Power-Hour";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

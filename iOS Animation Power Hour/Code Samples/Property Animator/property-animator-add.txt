@@ -3,10 +3,12 @@ let propertyAnimator = UIViewPropertyAnimator(duration: 10.0, dampingRatio: 0.7,
 })
 propertyAnimator.startAnimation()
 
+// called when 'Add Alpha Animation' is pressed
 propertyAnimator.addAnimations({
     square.alpha = 0
 })
 
+// called when 'Add Color Animation' is pressed
 propertyAnimator.addAnimations({
     square.backgroundColor = UIColor.blue
 })

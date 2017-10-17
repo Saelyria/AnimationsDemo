@@ -28,9 +28,8 @@ class AnimationExampleView: UIView {
     convenience init(withComponents components: [Component]) {
         self.init(frame: CGRect())
         self.components = components
-        self.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
+        self.backgroundColor = UIColor.groupTableViewBackground
         self.layer.cornerRadius = 8
-        self.clipsToBounds = true
         
         self.horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
         self.horizontalStackView.axis = .horizontal
@@ -134,6 +133,11 @@ fileprivate extension AnimationExampleView {
         NSLayoutConstraint(item: redSquare, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: width).isActive = true
         NSLayoutConstraint(item: redSquare, attribute: .width, relatedBy: .equal, toItem: redSquare, attribute: .height, multiplier: 1, constant: 0).isActive = true
         redSquare.backgroundColor = UIColor.red
+        redSquare.layer.cornerRadius = 8
+        redSquare.layer.shadowRadius = 5
+        redSquare.layer.shadowOpacity = 0.2
+        redSquare.layer.shadowColor = UIColor.black.cgColor
+        redSquare.layer.shadowOffset = CGSize(width: 5, height: 5)
         return redSquare
     }
 }

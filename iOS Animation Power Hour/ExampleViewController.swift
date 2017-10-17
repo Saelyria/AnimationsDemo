@@ -70,56 +70,75 @@ class ExampleViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
+        let scrollView = AutoLayoutScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(scrollView)
+        if #available(iOS 11.0, *) {
+            NSLayoutConstraint(item: scrollView, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: scrollView, attribute: .left, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .left, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: scrollView, attribute: .right, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .right, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: scrollView, attribute: .bottom, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        } else {
+            NSLayoutConstraint(item: scrollView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: scrollView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: scrollView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: scrollView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        }
+        
         let descriptionLabel = UILabel()
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.numberOfLines = 0
         descriptionLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
         descriptionLabel.textColor = UIColor.darkGray
-        descriptionLabel.attributedText = ExampleViewController.attributedStringWithMonospace(inText: descriptionText)
-        self.view.addSubview(descriptionLabel)
+        descriptionLabel.attributedText = self.attributedStringWithMonospace(inText: descriptionText)
+        scrollView.contentView.addSubview(descriptionLabel)
         
         let animatingViewSectionTitle = UILabel()
         animatingViewSectionTitle.text = "Example"
         animatingViewSectionTitle.translatesAutoresizingMaskIntoConstraints = false
         animatingViewSectionTitle.font = UIFont.systemFont(ofSize: 23, weight: .bold)
-        self.view.addSubview(animatingViewSectionTitle)
+        scrollView.contentView.addSubview(animatingViewSectionTitle)
         
         animationExampleView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(animationExampleView)
+        animationExampleView.layer.shadowRadius = 5
+        animationExampleView.layer.shadowOpacity = 0.1
+        animationExampleView.layer.shadowColor = UIColor.black.cgColor
+        animationExampleView.layer.shadowOffset = CGSize(width: 7, height: 7)
+        scrollView.contentView.addSubview(animationExampleView)
         
         let actionsStackView = UIStackView()
         actionsStackView.translatesAutoresizingMaskIntoConstraints = false
-        actionsStackView.alignment = .center
+        actionsStackView.alignment = .leading
         actionsStackView.distribution = .fillEqually
         actionsStackView.axis = .horizontal
         actionsStackView.spacing = 15
-        self.view.addSubview(actionsStackView)
-        NSLayoutConstraint(item: actionsStackView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        scrollView.contentView.addSubview(actionsStackView)
         
         let codeSectionTitle = UILabel()
         codeSectionTitle.text = "Code"
         codeSectionTitle.translatesAutoresizingMaskIntoConstraints = false
         codeSectionTitle.font = UIFont.systemFont(ofSize: 23, weight: .bold)
-        self.view.addSubview(codeSectionTitle)
+        scrollView.contentView.addSubview(codeSectionTitle)
         
         let sampleCodeView = CodeView()
         sampleCodeView.translatesAutoresizingMaskIntoConstraints = false
         sampleCodeView.code = sampleCode
         sampleCodeView.layer.cornerRadius = 8
-        sampleCodeView.clipsToBounds = true
-        self.view.addSubview(sampleCodeView)
+        sampleCodeView.layer.shadowRadius = 5
+        sampleCodeView.layer.shadowOpacity = 0.1
+        sampleCodeView.layer.shadowColor = UIColor.black.cgColor
+        sampleCodeView.layer.shadowOffset = CGSize(width: 7, height: 7)
+        sampleCodeView.clipsToBounds = false
+        scrollView.contentView.addSubview(sampleCodeView)
         
         let views = ["desc":descriptionLabel, "animTitle":animatingViewSectionTitle, "animView":animationExampleView, "actions":actionsStackView, "codeTitle":codeSectionTitle, "code":sampleCodeView]
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[desc]-35-[animTitle]-10-[animView(200)]-15-[actions]-35-[codeTitle]-10-[code]->=20-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[desc]-25-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[animTitle]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[animView]-25-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[codeTitle]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[code]-25-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        
-//        self.animationExampleView = animationExampleView
-//        self.actionStackView = actionsStackView
-//        self.sampleCodeView = sampleCodeView
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-25-[desc]-35-[animTitle]-10-[animView(200)]-15-[actions]-35-[codeTitle]-10-[code]->=20-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-90-[desc]-90-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-60-[animTitle]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-60-[animView]-60-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-60-[actions]-(>=60)-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-60-[codeTitle]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-60-[code]-60-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         
         for action in self.actions {
             if let buttonAction = action as? ExampleViewControllerButtonAction {
@@ -142,30 +161,6 @@ class ExampleViewController: UIViewController {
                 self.actionsDict[slider] = sliderAction
                 slider.addTarget(self, action: #selector(onSliderValueChanged(slider:)), for: .valueChanged)
             }
-        }
-    }
-    
-    private class func attributedStringWithMonospace(inText text: String) -> NSAttributedString {
-        let monospaceFont = UIFont(name: "Menlo-Regular", size: 16)
-        guard monospaceFont != nil else { return NSAttributedString(string: text) }
-        
-        let attributedText = NSMutableAttributedString(string: text)
-        do {
-            let regexString = "`([^`]*)`"
-            let regex = try NSRegularExpression(pattern: regexString, options: [])
-            
-            let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.characters.count))
-            
-            for match in matches {
-                let rangeBetweenTildes = match.range(at: 1)
-                let attributes = [NSAttributedStringKey.font : monospaceFont!, NSAttributedStringKey.foregroundColor : UIColor(red: 82/255, green: 109/255, blue: 153/255, alpha: 1)]
-                attributedText.setAttributes(attributes, range: rangeBetweenTildes)
-            }
-            
-            attributedText.mutableString.replaceOccurrences(of: "`", with: "", options: [], range: NSRange(location: 0, length: attributedText.length))
-            return  attributedText
-        } catch _ {
-            return NSAttributedString(string: text)
         }
     }
     

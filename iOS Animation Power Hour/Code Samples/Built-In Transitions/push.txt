@@ -1,0 +1,4 @@
+let newViewController = UIViewController()
+
+// requires that the previous view controller is in a navigation controller
+self.navigationController?.pushViewController(newViewController, animated: true)

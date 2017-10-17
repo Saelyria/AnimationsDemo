@@ -1,6 +1,7 @@
 
 import UIKit
 
+/// A view containing a text view formatted to show syntax-highlighted code.
 class CodeView: UIView {
     var code: String? {
         didSet {
@@ -30,7 +31,7 @@ class CodeView: UIView {
     
     func setup() {
         textStorage.language = "Swift"
-        textStorage.highlightr.setTheme(to: "atelier-sulphurpool-light") //paraiso-dark, Androidstudio, Atelier Sulphurpool Light/Light, Dark, Docco, Github Gist, Solarized Dark
+        textStorage.highlightr.setTheme(to: "solarized-light") //paraiso-dark, Androidstudio, Atelier Sulphurpool Light/Light, Dark, Docco, Github Gist, Solarized Dark
         let font = textStorage.highlightr.theme.codeFont.withSize(16)
         textStorage.highlightr.theme.setCodeFont(font)
         
@@ -45,7 +46,8 @@ class CodeView: UIView {
         self.textView.isScrollEnabled = false
         self.textView.isEditable = false
         self.textView.textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-        self.textView.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
+        self.textView.backgroundColor = UIColor.groupTableViewBackground//textStorage.highlightr.theme.themeBackgroundColor
+        self.textView.layer.cornerRadius = 8
         self.addSubview(self.textView)
         self.textView.setContentCompressionResistancePriority(.required, for: .horizontal)
         self.textView.setContentCompressionResistancePriority(.required, for: .vertical)

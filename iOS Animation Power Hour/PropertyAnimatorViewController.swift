@@ -9,7 +9,7 @@ class PropertyAnimatorViewController: UIViewController {
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.groupTableViewBackground
         
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,15 +22,15 @@ class PropertyAnimatorViewController: UIViewController {
         
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 25
+        stackView.spacing = 1
         stackView.alignment = .fill
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         scrollView.addSubview(stackView)
         NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: scrollView, attribute: .top, multiplier: 1, constant: 25).isActive = true
-        NSLayoutConstraint(item: stackView, attribute: .width, relatedBy: .equal, toItem: scrollView, attribute: .width, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .width, relatedBy: .equal, toItem: scrollView, attribute: .width, multiplier: 1, constant: -160).isActive = true
         NSLayoutConstraint(item: stackView, attribute: .centerX, relatedBy: .equal, toItem: scrollView, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: stackView, attribute: .bottom, relatedBy: .equal, toItem: scrollView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .bottom, relatedBy: .equal, toItem: scrollView, attribute: .bottom, multiplier: 1, constant: -20).isActive = true
         
         let basicsSection = self.createBasicsSection()
         stackView.addArrangedSubview(basicsSection)

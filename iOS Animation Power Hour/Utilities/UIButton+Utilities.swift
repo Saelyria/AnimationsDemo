@@ -12,10 +12,10 @@ extension UIButton {
     func setupWithOutline() {
         self.layer.borderWidth = 1
         self.layer.borderColor = self.tintColor.cgColor
-        self.layer.cornerRadius = 6
+        self.layer.cornerRadius = 10
         self.backgroundColor = UIColor.clear
-        self.contentEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
-        self.setBackgroundColor(color: UIColor.lightGray.withAlphaComponent(0.2), forState: .highlighted)
+        self.contentEdgeInsets = UIEdgeInsets(top: 7, left: 10, bottom: 7, right: 10)
+        self.setBackgroundColor(color: UIColor.lightGray.withAlphaComponent(0.5), forState: .highlighted)
     }
     
     func setBackgroundColor(color: UIColor, forState: UIControlState) {
