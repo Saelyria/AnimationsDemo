@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		9314A54A1F96DAC70019FE31 /* StackViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9314A5491F96DAC70019FE31 /* StackViewViewController.swift */; };
 		9314A54C1F96E4CC0019FE31 /* CustomTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9314A54B1F96E4CC0019FE31 /* CustomTransitionViewController.swift */; };
+		933979941F99A6C300FCB61A /* DemoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933979931F99A6C300FCB61A /* DemoSectionView.swift */; };
 		93532BC31F83209E0030BE96 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93532BC21F83209E0030BE96 /* UIColor+Theme.swift */; };
 		93532BC51F8327560030BE96 /* AutoLayoutScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93532BC41F8327560030BE96 /* AutoLayoutScrollView.swift */; };
 		93532BC71F84336A0030BE96 /* ButtonToNavigationBarAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93532BC61F84336A0030BE96 /* ButtonToNavigationBarAnimationController.swift */; };
 		93532BC91F8434060030BE96 /* ImageExpandAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93532BC81F8434060030BE96 /* ImageExpandAnimationController.swift */; };
 		93591E111F927A3500A22F16 /* BuiltInTransitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93591E101F927A3500A22F16 /* BuiltInTransitionsViewController.swift */; };
 		93591E131F92857200A22F16 /* ExampleTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93591E121F92857200A22F16 /* ExampleTransitionViewController.swift */; };
-		93591E151F92B75B00A22F16 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93591E141F92B75B00A22F16 /* Storyboard.storyboard */; };
 		936DAA1B1F96EF220095DA23 /* PuppyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DAA1A1F96EF220095DA23 /* PuppyCollectionViewCell.swift */; };
 		936DAA1D1F96EFA30095DA23 /* Puppy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DAA1C1F96EFA30095DA23 /* Puppy.swift */; };
 		9379C9FF1F996A43009A2B07 /* CustomTransitionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9379C9FE1F996A43009A2B07 /* CustomTransitionDetailViewController.swift */; };
@@ -315,13 +315,13 @@
 /* Begin PBXFileReference section */
 		9314A5491F96DAC70019FE31 /* StackViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewViewController.swift; sourceTree = "<group>"; };
 		9314A54B1F96E4CC0019FE31 /* CustomTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionViewController.swift; sourceTree = "<group>"; };
+		933979931F99A6C300FCB61A /* DemoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSectionView.swift; sourceTree = "<group>"; };
 		93532BC21F83209E0030BE96 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		93532BC41F8327560030BE96 /* AutoLayoutScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutScrollView.swift; sourceTree = "<group>"; };
 		93532BC61F84336A0030BE96 /* ButtonToNavigationBarAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonToNavigationBarAnimationController.swift; path = "iOS Animation Power Hour/Utilities/ButtonToNavigationBarAnimationController.swift"; sourceTree = SOURCE_ROOT; };
 		93532BC81F8434060030BE96 /* ImageExpandAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageExpandAnimationController.swift; path = "iOS Animation Power Hour/Utilities/ImageExpandAnimationController.swift"; sourceTree = SOURCE_ROOT; };
 		93591E101F927A3500A22F16 /* BuiltInTransitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInTransitionsViewController.swift; sourceTree = "<group>"; };
 		93591E121F92857200A22F16 /* ExampleTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTransitionViewController.swift; sourceTree = "<group>"; };
-		93591E141F92B75B00A22F16 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		936DAA1A1F96EF220095DA23 /* PuppyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyCollectionViewCell.swift; sourceTree = "<group>"; };
 		936DAA1C1F96EFA30095DA23 /* Puppy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puppy.swift; sourceTree = "<group>"; };
 		9379C9FE1F996A43009A2B07 /* CustomTransitionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionDetailViewController.swift; sourceTree = "<group>"; };
@@ -1017,6 +1017,7 @@
 				AB61504B1F7ECC0800948360 /* AnimationExampleView.swift */,
 				AB8D55A91F79603100C983B4 /* CollapsableView.swift */,
 				AB6150501F82CDD000948360 /* ExampleViewController.swift */,
+				933979931F99A6C300FCB61A /* DemoSectionView.swift */,
 			);
 			path = "Common Views";
 			sourceTree = "<group>";
@@ -1082,7 +1083,6 @@
 				AB0CC5211F75A9B10050E486 /* Highlightr */,
 				AB6150441F7EC21D00948360 /* BezierCurveView */,
 				ABE525481F744B640087D70F /* Assets.xcassets */,
-				93591E141F92B75B00A22F16 /* Storyboard.storyboard */,
 				ABE5254A1F744B640087D70F /* LaunchScreen.storyboard */,
 				ABE5254D1F744B640087D70F /* Info.plist */,
 			);
@@ -1334,7 +1334,6 @@
 				AB0CC6761F75ABA80050E486 /* tomorrow-night-eighties.min.css in Resources */,
 				AB0CC71B1F75ABB30050E486 /* vbscript-html.min.js in Resources */,
 				AB0CC7231F75ABB30050E486 /* xquery.min.js in Resources */,
-				93591E151F92B75B00A22F16 /* Storyboard.storyboard in Resources */,
 				AB0CC70D1F75ABB30050E486 /* step21.min.js in Resources */,
 				AB0CC67A1F75ABA80050E486 /* xcode.min.css in Resources */,
 				AB0CC6C01F75ABB30050E486 /* haml.min.js in Resources */,
@@ -1449,6 +1448,7 @@
 				AB0CC62A1F75AB7F0050E486 /* HTMLUtils.swift in Sources */,
 				AB6150301F7AC7E100948360 /* PropertyAnimatorViewController.swift in Sources */,
 				AB0CC6291F75AB7E0050E486 /* Highlightr.swift in Sources */,
+				933979941F99A6C300FCB61A /* DemoSectionView.swift in Sources */,
 				9379C9FF1F996A43009A2B07 /* CustomTransitionDetailViewController.swift in Sources */,
 				AB0CC72C1F7949B10050E486 /* CodeView.swift in Sources */,
 				93532BC31F83209E0030BE96 /* UIColor+Theme.swift in Sources */,
