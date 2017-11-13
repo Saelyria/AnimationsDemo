@@ -1,0 +1,10 @@
+version: "Apple Swift version 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)"
+options: "c59661834c408f4d434ebc09ceb95456"
+build_time: [1510601165, 273522000]
+inputs:
+  "/Users/Aaron/Documents/iOS Animations Demo/PuppyViewer/PuppyViewer/Stuff/Puppy.swift": [1508464228, 0]
+  "/Users/Aaron/Documents/iOS Animations Demo/PuppyViewer/PuppyViewer/ImageExpandAnimationController.swift": [1510600602, 0]
+  "/Users/Aaron/Documents/iOS Animations Demo/PuppyViewer/PuppyViewer/DetailViewController.swift": [1510600976, 0]
+  "/Users/Aaron/Documents/iOS Animations Demo/PuppyViewer/PuppyViewer/CollectionViewController.swift": [1510601030, 0]
+  "/Users/Aaron/Documents/iOS Animations Demo/PuppyViewer/PuppyViewer/Stuff/PuppyCollectionViewCell.swift": [1508464461, 0]
+  "/Users/Aaron/Documents/iOS Animations Demo/PuppyViewer/PuppyViewer/Stuff/AppDelegate.swift": [1508468969, 0]
